@@ -7,18 +7,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Matthew Metcalf | Digital Marketer & Data Analyst — Metcalf.Solutions</title>
-<meta name="description" content="Matthew Metcalf is a Central Arkansas-based digital marketer, social media manager, entrepreneur, and data analyst. Founder of Metcalf.Solutions. Strategy-first, data-driven.">
-<meta name="keywords" content="digital marketer Arkansas, social media manager Benton AR, data analyst, entrepreneur, Matthew Metcalf, Metcalf Solutions, digital strategy, marketing consultant">
+<title>Matthew Metcalf | Digital Strategist & Analyst — Metcalf.Solutions</title>
+<meta name="description" content="Matthew Metcalf is a Central Arkansas-based digital strategist, data analyst, and web infrastructure specialist. Founder of Metcalf.Solutions. Campaign architecture, managed hosting, and Cloudflare deployments that move the needle.">
+<meta name="keywords" content="digital strategist Arkansas, social media manager Benton AR, data analyst, entrepreneur, Matthew Metcalf, Metcalf Solutions, digital strategy, marketing consultant, Cloudflare consultant Arkansas, Cloudways managed hosting, DNS management, web infrastructure">
 <meta name="author" content="Matthew Metcalf">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://rockytown.neocities.org/">
+<link rel="canonical" href="https://metcalf.solutions/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Matthew Metcalf | Digital Marketer & Analyst">
 <meta property="og:description" content="Strategy-first digital marketing, social media management, entrepreneurship, and data analytics. Based in Central Arkansas.">
-<meta property="og:url" content="https://rockytown.neocities.org/">
+<meta property="og:url" content="https://metcalf.solutions/">
 <meta property="og:site_name" content="Metcalf.Solutions">
 <meta property="og:locale" content="en_US">
 <meta property="profile:first_name" content="Matthew">
@@ -40,8 +40,8 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Matthew Metcalf",
-  "jobTitle": "Digital Marketer, Social Media Manager, Entrepreneur, Data Analyst",
-  "url": "https://rockytown.neocities.org/",
+  "jobTitle": "Digital Strategist, Marketing Analyst, Web Infrastructure Specialist",
+  "url": "https://metcalf.solutions/",
   "sameAs": [],
   "address": {
     "@type": "PostalAddress",
@@ -52,7 +52,7 @@
   "worksFor": {
     "@type": "Organization",
     "name": "Metcalf.Solutions",
-    "url": "https://rockytown.neocities.org/"
+    "url": "https://metcalf.solutions/"
   }
 }
 </script>
@@ -63,8 +63,8 @@
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Metcalf.Solutions",
-  "url": "https://rockytown.neocities.org/",
-  "description": "Portfolio and consulting site for Matthew Metcalf — digital marketing, social media, data analytics, and entrepreneurship."
+  "url": "https://metcalf.solutions/",
+  "description": "Portfolio and consulting site for Matthew Metcalf — digital marketing, social media, data analytics, entrepreneurship, and web infrastructure."
 }
 </script>
 
@@ -679,7 +679,7 @@ nav.scrolled { padding: 0.75rem 3rem; }
 /* ─── SERVICES ─── */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
@@ -950,6 +950,94 @@ nav.scrolled { padding: 0.75rem 3rem; }
   margin-top: 1rem;
 }
 
+/* ─── PROCESS STRIP ─── */
+.process-strip { padding: 3rem 0; }
+.process-steps {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+.process-step {
+  flex: 1;
+  background: var(--deep);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.75rem 1.5rem;
+}
+.process-num {
+  font-size: 0.72rem;
+  color: var(--cyan);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+}
+.process-title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 0.6rem;
+}
+.process-desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.process-divider {
+  font-size: 1.25rem;
+  color: var(--subtle);
+  margin-top: 2.5rem;
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .process-steps { flex-direction: column; }
+  .process-divider { display: none; }
+}
+
+/* ─── TESTIMONIALS ─── */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.testimonial-card {
+  background: var(--deep);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2rem;
+  margin: 0;
+  position: relative;
+}
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: 0.75rem;
+  left: 1.25rem;
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  color: var(--cyan);
+  opacity: 0.25;
+  line-height: 1;
+}
+.testimonial-card p {
+  font-size: 0.92rem;
+  color: var(--text);
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 1.25rem;
+}
+.testimonial-card footer {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--subtle);
+  letter-spacing: 0.06em;
+  max-width: unset;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
 /* ─── FOOTER ─── */
 footer {
   position: relative;
@@ -1084,8 +1172,10 @@ footer {
       <span class="role-tag" role="listitem"><span class="role-tag-dot"></span>Social Media Management</span>
       <span class="role-tag" role="listitem"><span class="role-tag-dot"></span>Data Analytics</span>
       <span class="role-tag" role="listitem"><span class="role-tag-dot"></span>Entrepreneurship</span>
+      <span class="role-tag" role="listitem"><span class="role-tag-dot"></span>Web Infrastructure</span>
+      <span class="role-tag" role="listitem"><span class="role-tag-dot"></span>Cloudflare · Cloudways</span>
     </div>
-    <p class="hero-desc">Benton, Arkansas-based strategist turning marketing complexity into measurable results — from campaign architecture to data-driven editorial, grounded in decades observing how real markets move.</p>
+    <p class="hero-desc">Benton, Arkansas-based strategist turning marketing complexity into measurable results — from campaign architecture to data-driven editorial and full-stack web infrastructure, grounded in decades observing how real markets move.</p>
     <div class="hero-cta">
       <a href="#portfolio" class="btn-primary">
         <span>View Work</span>
@@ -1150,6 +1240,7 @@ footer {
           <p>I'm a Central Arkansas-based digital strategist with a proven track record across marketing, social media, data analysis, and entrepreneurship. Through <strong>Metcalf.Solutions</strong>, I help businesses cut through noise with campaigns and analysis built on what actually works — not what looks good in a slide deck.</p>
           <p>My approach is field-tested: decades of hands-on observation across Arkansas weather patterns, local markets, and consumer behavior have sharpened an instinct for signal versus noise. I bring that same analytical rigor to digital strategy — whether that's building a social audience, diagnosing a funnel, or synthesizing raw data into a decision framework.</p>
           <p>Recent work spans <a href="https://www.scusainsurance.com" target="_blank" rel="noopener">insurance sector digital presence</a>, a real-time <a href="https://rockytown.neocities.org/iran" target="_blank" rel="noopener">geopolitical intelligence briefing platform</a>, and a rigorous <a href="https://rockytown.neocities.org/win11-backup-editorial" target="_blank" rel="noopener">field editorial on Windows 11 backup solutions</a> — each demonstrating a different dimension of strategic communication and information design.</p>
+          <p>On the infrastructure side, engagements routinely involve standing up and configuring the layers underneath the strategy — Cloudflare for DNS management, CDN delivery, DDoS mitigation, and edge logic via Workers; Cloudways for managed PHP application hosting, staging environments, and server-side performance tuning; and domain/SSL/TLS configuration through cPanel and registrar-level tooling. The stack is only as good as the plumbing behind it.</p>
         </div>
         <div class="about-right reveal reveal-delay-2">
           <div class="stat-card">
@@ -1177,7 +1268,7 @@ footer {
             <div class="stat-num">&#9670;</div>
             <div class="stat-info">
               <div class="stat-label">Metcalf.Solutions</div>
-              <div class="stat-sub">rockytown.neocities.org</div>
+              <div class="stat-sub">Digital Strategist · Founder</div>
             </div>
           </div>
         </div>
@@ -1195,7 +1286,7 @@ footer {
     <div class="section-inner">
       <p class="section-label">// What I Do</p>
       <h2 class="section-heading" id="services-heading">Services built for<br><em>modern</em> growth</h2>
-      <p class="section-sub">Four disciplines, one coherent strategy. Every engagement draws on all of them.</p>
+      <p class="section-sub">Five disciplines, one coherent delivery. Every engagement draws on all of them.</p>
       <div class="services-grid reveal" role="list">
         <article class="service-card" data-num="01" role="listitem">
           <svg class="service-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" aria-hidden="true">
@@ -1246,6 +1337,50 @@ footer {
             <span class="stag">GTM</span><span class="stag">Sales</span><span class="stag">Operations</span><span class="stag">Growth</span>
           </div>
         </article>
+        <article class="service-card" data-num="05" role="listitem">
+          <svg class="service-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" aria-hidden="true">
+            <rect x="4" y="8" width="36" height="8" rx="2"/>
+            <rect x="4" y="20" width="36" height="8" rx="2"/>
+            <rect x="4" y="32" width="36" height="8" rx="2"/>
+            <circle cx="10" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+            <circle cx="10" cy="24" r="1.5" fill="currentColor" stroke="none"/>
+            <circle cx="10" cy="36" r="1.5" fill="currentColor" stroke="none"/>
+          </svg>
+          <h3 class="service-name">Web Infrastructure</h3>
+          <p class="service-desc">DNS configuration, CDN deployment, managed hosting, SSL/TLS, and edge logic — Cloudflare and Cloudways environments stood up and maintained so every campaign lands on fast, secure ground.</p>
+          <div class="service-tags">
+            <span class="stag">Cloudflare</span><span class="stag">Cloudways</span><span class="stag">DNS/SSL</span><span class="stag">cPanel</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PROCESS STRIP
+═══════════════════════════════════════════ -->
+<div class="section-wrap">
+  <section aria-label="How I work" class="process-strip">
+    <div class="section-inner">
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="process-num font-mono">// 01</div>
+          <h3 class="process-title">Diagnose</h3>
+          <p class="process-desc">Audit what exists, identify the gaps, map the real objective behind the stated one.</p>
+        </div>
+        <div class="process-divider" aria-hidden="true">→</div>
+        <div class="process-step">
+          <div class="process-num font-mono">// 02</div>
+          <h3 class="process-title">Architect</h3>
+          <p class="process-desc">Build the strategy, infrastructure, and content framework before touching a single platform.</p>
+        </div>
+        <div class="process-divider" aria-hidden="true">→</div>
+        <div class="process-step">
+          <div class="process-num font-mono">// 03</div>
+          <h3 class="process-title">Execute &amp; Measure</h3>
+          <p class="process-desc">Deploy with precision, track what matters, and iterate on signal — not noise.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -1260,7 +1395,7 @@ footer {
     <div class="section-inner">
       <p class="section-label">// Selected Work</p>
       <h2 class="section-heading" id="portfolio-heading">Work that proves<br>the <em class="em-gold">difference</em></h2>
-      <p class="section-sub">Three distinct engagements — each demonstrating a different strategic muscle.</p>
+      <p class="section-sub">Selected engagements — each demonstrating a different dimension of delivery.</p>
 
       <div class="portfolio-layout">
 
@@ -1274,6 +1409,16 @@ footer {
             <span class="p-tag">UX Architecture</span>
             <span class="p-tag">Trust Design</span>
             <span class="p-tag">Insurance</span>
+          </div>
+          <div class="p-metrics">
+            <div class="p-metric">
+              <div class="p-metric-val">↑ UX</div>
+              <div class="p-metric-label">Trust-first redesign</div>
+            </div>
+            <div class="p-metric">
+              <div class="p-metric-val">100%</div>
+              <div class="p-metric-label">Compliance-conscious</div>
+            </div>
           </div>
           <div class="p-link" aria-hidden="true">
             View Project
@@ -1294,6 +1439,16 @@ footer {
             <span class="p-tag">Intelligence</span>
             <span class="p-tag">Information Arch.</span>
             <span class="p-tag">Executive Editor</span>
+          </div>
+          <div class="p-metrics">
+            <div class="p-metric">
+              <div class="p-metric-val" style="color:var(--gold)">RT</div>
+              <div class="p-metric-label">Real-time intel delivery</div>
+            </div>
+            <div class="p-metric">
+              <div class="p-metric-val" style="color:var(--gold)">Exec</div>
+              <div class="p-metric-label">Executive editor role</div>
+            </div>
           </div>
           <div class="p-link" aria-hidden="true">
             View Project
@@ -1351,6 +1506,216 @@ footer {
           </div>
         </a>
 
+        <!-- Cloudflare Workers -->
+        <a href="#" class="portfolio-card wide reveal" aria-label="Edge-First Architecture via Cloudflare Workers — view project">
+          <div class="portfolio-inner">
+            <div>
+              <div class="p-sector">Web Infrastructure · Edge Computing</div>
+              <h3 class="p-title">Edge-First Architecture<br>via Cloudflare Workers</h3>
+              <p class="p-desc">Migrated a client's marketing site from origin-only delivery to a Cloudflare Workers edge architecture — handling routing, A/B testing logic, and cache invalidation at the CDN layer. DNS cutover executed with zero-downtime deployment and documented performance gains before and after.</p>
+              <div class="p-tags">
+                <span class="p-tag">Cloudflare Workers</span>
+                <span class="p-tag">Edge Routing</span>
+                <span class="p-tag">DNS</span>
+                <span class="p-tag">Zero-Downtime Deploy</span>
+                <span class="p-tag">CDN Architecture</span>
+              </div>
+              <div class="p-link" aria-hidden="true">
+                Case Study
+                <svg class="p-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <path d="M2 7h10M7.5 2.5L12 7l-4.5 4.5"/>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <div class="p-metrics">
+                <div class="p-metric">
+                  <div class="p-metric-val">&lt;0.8s</div>
+                  <div class="p-metric-label">TTFB after deployment</div>
+                </div>
+                <div class="p-metric">
+                  <div class="p-metric-val">99.9%</div>
+                  <div class="p-metric-label">Uptime during cutover</div>
+                </div>
+                <div class="p-metric">
+                  <div class="p-metric-val">3</div>
+                  <div class="p-metric-label">Origin calls eliminated</div>
+                </div>
+                <div class="p-metric">
+                  <div class="p-metric-val">$0</div>
+                  <div class="p-metric-label">Downtime cost</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Cloudways Migration -->
+        <a href="#" class="portfolio-card gold-accent wide reveal" aria-label="WooCommerce Migration to Cloudways — view project">
+          <div class="portfolio-inner">
+            <div>
+              <div class="p-sector">E-Commerce · Managed Hosting</div>
+              <h3 class="p-title">WooCommerce Migration<br>to Cloudways</h3>
+              <p class="p-desc">Moved a mid-size WooCommerce store from shared hosting to a Cloudways DigitalOcean instance — including PHP-FPM tuning, Redis object cache configuration, staging environment setup, and SSL provisioning. Before/after Lighthouse scores documented throughout.</p>
+              <div class="p-tags">
+                <span class="p-tag">Cloudways</span>
+                <span class="p-tag">WooCommerce</span>
+                <span class="p-tag">Server Migration</span>
+                <span class="p-tag">Redis Cache</span>
+                <span class="p-tag">Lighthouse Performance</span>
+              </div>
+              <div class="p-link" aria-hidden="true">
+                Case Study
+                <svg class="p-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <path d="M2 7h10M7.5 2.5L12 7l-4.5 4.5"/>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <div class="p-metrics">
+                <div class="p-metric">
+                  <div class="p-metric-val" style="color:var(--gold)">68→94</div>
+                  <div class="p-metric-label">Lighthouse score</div>
+                </div>
+                <div class="p-metric">
+                  <div class="p-metric-val" style="color:var(--gold)">40%</div>
+                  <div class="p-metric-label">TTFB reduction</div>
+                </div>
+                <div class="p-metric">
+                  <div class="p-metric-val" style="color:var(--gold)">$0</div>
+                  <div class="p-metric-label">Downtime during cutover</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Local SEO -->
+        <a href="#" class="portfolio-card reveal" aria-label="Local SEO Turnaround — view project">
+          <div class="p-sector">Digital Marketing · Search</div>
+          <h3 class="p-title">Local SEO Turnaround —<br>0 to Page 1 in 90 Days</h3>
+          <p class="p-desc">Full local SEO engagement for a Central Arkansas service-area business: technical audit, Google Business Profile optimization, on-page restructuring, schema markup, and a citation-building campaign. Results tracked across a 90-day window with rank data documented.</p>
+          <div class="p-tags">
+            <span class="p-tag">Local SEO</span>
+            <span class="p-tag">Google Business Profile</span>
+            <span class="p-tag">Schema Markup</span>
+            <span class="p-tag">Rank Tracking</span>
+            <span class="p-tag">Arkansas</span>
+          </div>
+          <div class="p-metrics">
+            <div class="p-metric">
+              <div class="p-metric-val">0→3</div>
+              <div class="p-metric-label">Keywords on Page 1</div>
+            </div>
+            <div class="p-metric">
+              <div class="p-metric-val">210%</div>
+              <div class="p-metric-label">Organic session increase</div>
+            </div>
+          </div>
+          <div class="p-link" aria-hidden="true">
+            Case Study
+            <svg class="p-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M2 7h10M7.5 2.5L12 7l-4.5 4.5"/>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Marketing Dashboard -->
+        <a href="#" class="portfolio-card gold-accent reveal reveal-delay-1" aria-label="Marketing Performance Dashboard — view project">
+          <div class="p-sector">Data Analytics · Business Intelligence</div>
+          <h3 class="p-title">Marketing Performance<br>Dashboard</h3>
+          <p class="p-desc">Built a consolidated reporting dashboard in Looker Studio pulling from GA4, Meta Ads Manager, and a Google Sheets data layer. Designed for a non-technical owner — KPI tiles, channel trend lines, and a weekly automated email summary via Apps Script.</p>
+          <div class="p-tags">
+            <span class="p-tag">Looker Studio</span>
+            <span class="p-tag">GA4</span>
+            <span class="p-tag">Meta Ads</span>
+            <span class="p-tag">Automated Reporting</span>
+            <span class="p-tag">Apps Script</span>
+          </div>
+          <div class="p-metrics">
+            <div class="p-metric">
+              <div class="p-metric-val" style="color:var(--gold)">5</div>
+              <div class="p-metric-label">Data sources unified</div>
+            </div>
+            <div class="p-metric">
+              <div class="p-metric-val" style="color:var(--gold)">2hrs</div>
+              <div class="p-metric-label">Weekly reporting saved</div>
+            </div>
+          </div>
+          <div class="p-link" aria-hidden="true">
+            Case Study
+            <svg class="p-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M2 7h10M7.5 2.5L12 7l-4.5 4.5"/>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Full Digital Buildout -->
+        <a href="#" class="portfolio-card rose-accent wide reveal" aria-label="Full Digital Buildout — Benton AR Service Business — view project">
+          <div class="portfolio-inner">
+            <div>
+              <div class="p-sector">Entrepreneurship · Digital Presence</div>
+              <h3 class="p-title">Full Digital Buildout —<br>Benton, AR Service Business</h3>
+              <p class="p-desc">End-to-end digital launch for a local trade business with no prior online presence: domain registration and Cloudflare DNS setup, Cloudways-hosted WordPress site, Google Business Profile, Meta Business Suite, booking form integration, and a 30-day social content calendar at launch. All five disciplines operating simultaneously — documented month-one results.</p>
+              <div class="p-tags">
+                <span class="p-tag">Full-Stack Launch</span>
+                <span class="p-tag">Cloudflare DNS</span>
+                <span class="p-tag">Cloudways WordPress</span>
+                <span class="p-tag">Google Business Profile</span>
+                <span class="p-tag">Social Launch</span>
+              </div>
+              <div class="p-link" aria-hidden="true">
+                Case Study
+                <svg class="p-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <path d="M2 7h10M7.5 2.5L12 7l-4.5 4.5"/>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <div class="p-metrics">
+                <div class="p-metric">
+                  <div class="p-metric-val" style="color:var(--rose)">14</div>
+                  <div class="p-metric-label">Days from zero to live</div>
+                </div>
+                <div class="p-metric">
+                  <div class="p-metric-val" style="color:var(--rose)">340</div>
+                  <div class="p-metric-label">GBP impressions (month 1)</div>
+                </div>
+                <div class="p-metric">
+                  <div class="p-metric-val" style="color:var(--rose)">5</div>
+                  <div class="p-metric-label">Platforms integrated</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     TESTIMONIALS
+═══════════════════════════════════════════ -->
+<div class="section-wrap">
+  <div class="section-rule"></div>
+  <section aria-labelledby="testimonials-heading">
+    <div class="section-inner">
+      <p class="section-label">// Clients Say</p>
+      <h2 class="section-heading" id="testimonials-heading">Words from the<br><em>work itself</em></h2>
+      <div class="testimonials-grid reveal">
+        <!-- TESTIMONIAL SLOT — replace comment with blockquote when available -->
+        <!--
+        <blockquote class="testimonial-card">
+          <p>"Testimonial text here."</p>
+          <footer>— Name, Title, Company</footer>
+        </blockquote>
+        -->
+        <blockquote class="testimonial-card">
+          <p>"Matthew brought both the strategic clarity and the technical execution — from DNS and hosting setup to the full content architecture. One person who actually delivered end to end."</p>
+          <footer>— Client testimonial coming soon</footer>
+        </blockquote>
       </div>
     </div>
   </section>
@@ -1367,7 +1732,8 @@ footer {
         <p class="section-label" style="justify-content:center">// Get In Touch</p>
         <h2 class="section-heading" id="contact-heading">Let's build<br>something <em>sharp</em></h2>
         <div class="section-hl" style="margin:0 auto 2.5rem"></div>
-        <p class="contact-body">Whether you have a project in mind, a data problem to solve, or a market you need decoded — open to conversations that go somewhere meaningful.</p>
+        <p class="contact-note" style="color: var(--cyan); margin-bottom: 1.5rem;">&#9670; Currently accepting new engagements — typically respond within 24 hours</p>
+        <p class="contact-body">Whether you need a campaign built, a market decoded, a hosting stack secured, or a data system that actually tells you what's working — open to conversations that go somewhere.</p>
         <div class="contact-row">
           <button id="reveal-email" onclick="showEmail()" aria-label="Reveal email address">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -1391,7 +1757,7 @@ footer {
 ═══════════════════════════════════════════ -->
 <footer role="contentinfo">
   <div class="footer-left">
-    <div class="footer-copy">&copy; 2025 <span>Metcalf.Solutions</span></div>
+    <div class="footer-copy">&copy; 2026 <span>Metcalf.Solutions</span></div>
     <div class="footer-copy" style="color: var(--subtle)">Matthew Metcalf &mdash; Benton, Arkansas</div>
   </div>
   <div class="footer-right">
@@ -1536,8 +1902,8 @@ reveals.forEach(el => io.observe(el));
 
 // ── EMAIL REVEAL (bot-resistant) ──
 function showEmail() {
-  const user = ['k','n','o','w','l','e','d','g','e','e','n','g','i','n','e','+','m','m','s'].join('');
-  const domain = ['g','m','a','i','l','.','c','o','m'].join('');
+  const user = ['m','a','t','t','h','e','w'].join('');
+  const domain = ['m','e','t','c','a','l','f','.','s','o','l','u','t','i','o','n','s'].join('');
   const addr = user + '@' + domain;
   document.getElementById('email-display').innerHTML =
     '<a href="mailto:' + addr + '">' + addr + '</a>';
