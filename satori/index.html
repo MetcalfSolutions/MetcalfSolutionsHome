@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Satori — Open-Source AI Wisdom Companion | Metcalf Solutions</title>
+<meta content="Satori is an open-source AI wisdom companion combining 18 contemplative and psychological traditions (Stoicism, IFS parts work, ACT cognitive defusion, Zen Buddhism, Ubuntu) with clinical discipline. Run locally or across agents with zero telemetry." name="description"/>
+<meta content="Satori AI, wisdom companion, mental health companion, therapy alternative, Stoicism AI, Internal Family Systems IFS, ACT therapy defusion, developer burnout, non-dual mindfulness, local SQLite memory" name="keywords"/>
+<meta name="author" content="Matthew Metcalf · Metcalf Solutions"/>
+<meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#13131a"/>
+<meta name="color-scheme" content="dark"/>
+<link rel="canonical" href="https://metcalf.solutions/satori/"/>
+<link rel="manifest" href="/satori/manifest.json"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/satori/icons/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/satori/icons/favicon-16x16.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/satori/icons/apple-touch-icon.png"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Satori · Metcalf Solutions"/>
+<meta property="og:title" content="Satori — Open-Source AI Wisdom Companion"/>
+<meta property="og:description" content="Built to be outgrown. Wisdom that tells you the truth, kindly. 18 contemplative &amp; clinical traditions, 98.0% pure-coding silence, and a 100% local SQLite memory vault."/>
+<meta property="og:url" content="https://metcalf.solutions/satori/"/>
+<meta property="og:image" content="https://metcalf.solutions/satori/assets/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Satori — Open-Source AI Wisdom Companion: Built to be outgrown"/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Satori — Open-Source AI Wisdom Companion"/>
+<meta name="twitter:description" content="Built to be outgrown. Wisdom that tells you the truth, kindly. Free &amp; open-source under Apache 2.0."/>
+<meta name="twitter:image" content="https://metcalf.solutions/satori/assets/og-image.png"/>
+<meta name="twitter:image:alt" content="Satori — Open-Source AI Wisdom Companion"/>
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Satori",
+  "alternateName": "Satori 悟り",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "macOS, Linux, Windows, Web",
+  "softwareVersion": "6.6.0",
+  "license": "https://www.apache.org/licenses/LICENSE-2.0",
+  "url": "https://metcalf.solutions/satori/",
+  "downloadUrl": "https://github.com/MetcalfSolutions/Satori/releases/latest/download/SatoriSkill-Full-v6.6.0.zip",
+  "codeRepository": "https://github.com/MetcalfSolutions/Satori",
+  "description": "Open-source AI wisdom companion combining 18 contemplative and psychological traditions with clinical discipline, 98.0% pure-coding silence, and a 100% local SQLite memory vault.",
+  "author": {
+    "@type": "Person",
+    "name": "Matthew Metcalf",
+    "url": "https://metcalf.solutions/"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&amp;family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+    }
+    ::-webkit-scrollbar { display: none; }
+    details > summary::-webkit-details-marker { display: none; }
+    :focus-visible {
+      outline: 2px solid #a78bfa !important;
+      outline-offset: 3px !important;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#13131a",
+            "surface-dim": "#13131a",
+            "surface-bright": "#393841",
+            "surface-container-lowest": "#0d0d15",
+            "surface-container-low": "#1b1b23",
+            "surface-container": "#1f1f27",
+            "surface-container-high": "#292932",
+            "surface-container-highest": "#34343d",
+            "on-surface": "#f1eff7",
+            "on-surface-variant": "#d4d0e2",
+            "outline": "#a4a0b5",
+            "outline-variant": "#585568",
+            "primary": "#d0caff",
+            "primary-container": "#5138e5",
+            "on-primary": "#2700a0",
+            "on-primary-container": "#d2ccff",
+            "secondary": "#ffc4b0",
+            "obsidian-base": "#181820",
+            "obsidian-elevated": "#20202B",
+            "parchment-glow": "#FAF8F5",
+            "telemetry-emerald": "#10B981",
+            "cinders-ember": "#e05320",
+            "celestial-indigo": "#5138E5"
+          },
+          fontFamily: {
+            "headline": ["EB Garamond", "serif"],
+            "body": ["Inter", "sans-serif"],
+            "code": ["JetBrains Mono", "monospace"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface font-body text-[15px] leading-6 text-on-surface antialiased selection:bg-primary-container selection:text-parchment-glow relative">
+<!-- =========================================================================
+       ACCESSIBILITY LIVE REGION & TOAST CONTAINER
+       ========================================================================= -->
+<div aria-live="assertive" class="sr-only" id="copy-live-region" role="status"></div>
+<!-- Visual Floating Toast Notification -->
+<div aria-atomic="true" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-2.5 px-4 py-3 rounded-xl bg-obsidian-elevated text-parchment-glow border border-primary/40 shadow-2xl" id="toast-notification" role="status">
+<span aria-hidden="true" class="material-symbols-outlined text-telemetry-emerald text-[20px]">check_circle</span>
+<span class="font-code text-[12px] font-medium tracking-wide" id="toast-text">Command copied to clipboard!</span>
+</div>
+<!-- =========================================================================
+       SKIP NAVIGATION LINKS (WCAG 2.4.1 Level A)
+       ========================================================================= -->
+<a class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2.5 focus:bg-violet-600 focus:text-white focus:rounded-lg focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-violet-300 font-medium text-sm" href="#main-content">Skip to Main Content</a>
+<a class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-48 focus:z-50 focus:px-4 focus:py-2.5 focus:bg-rose-700 focus:text-white focus:rounded-lg focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-rose-300 font-medium text-sm" href="#safety-crisis">Jump to 24/7 Crisis Helplines</a>
+<!-- =========================================================================
+       TOP PERSISTENT NAVIGATION
+       ========================================================================= -->
+<header class="fixed top-0 left-0 right-0 z-40 bg-obsidian-base/90 backdrop-blur-xl border-b border-zinc-700/80">
+<div class="h-16 max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between gap-4">
+<div class="flex items-center gap-4 min-w-0">
+<a aria-label="Satori Home" class="flex items-center gap-2.5 group focus:rounded focus:outline-none" href="#">
+<span class="font-headline text-[22px] tracking-tight text-on-surface font-normal whitespace-nowrap"><span lang="ja">Satori</span> <span class="font-light text-slate-300" lang="ja">悟り</span></span>
+</a>
+<div class="hidden xl:flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container-high border border-zinc-700/80">
+<span aria-hidden="true" class="w-1.5 h-1.5 rounded-full bg-telemetry-emerald shadow-[0_0_8px_#10B981]"></span>
+<span class="font-code text-[11px] text-slate-300 font-medium">v6.6.0 · Local &amp; Private</span>
+</div>
+</div>
+<nav aria-label="Primary Navigation" class="hidden lg:flex items-center gap-1 p-1 rounded-lg bg-surface-container-lowest border border-zinc-700/80">
+<a class="px-3 py-1 rounded text-slate-300 hover:text-on-surface hover:bg-surface-container-high transition-colors text-[13px] focus:outline-none" href="#why-satori">Why Satori</a>
+<a class="px-3 py-1 rounded text-slate-300 hover:text-on-surface hover:bg-surface-container-high transition-colors text-[13px] focus:outline-none" href="#immovables">8 Immovables</a>
+<a class="px-3 py-1 rounded text-slate-300 hover:text-on-surface hover:bg-surface-container-high transition-colors text-[13px] focus:outline-none" href="#benchmarks">Benchmarks</a>
+<a class="px-3 py-1 rounded text-slate-300 hover:text-on-surface hover:bg-surface-container-high transition-colors text-[13px] focus:outline-none" href="#how-it-works">How It Works</a>
+<a class="px-3 py-1 rounded text-slate-300 hover:text-on-surface hover:bg-surface-container-high transition-colors text-[13px] focus:outline-none" href="#install-matrix">16 Surfaces</a>
+<a class="px-3 py-1 rounded text-primary hover:text-parchment-glow hover:bg-surface-container-high transition-colors text-[13px] font-medium focus:outline-none" href="#seo-faq-hub">Knowledge Base</a>
+<a class="px-3 py-1 rounded text-slate-300 hover:text-on-surface hover:bg-surface-container-high transition-colors text-[13px] focus:outline-none" href="#safety-crisis">Safety</a>
+</nav>
+<div class="flex items-center gap-3">
+<!-- GitHub Star Counter -->
+<a aria-label="119 stars on GitHub repository" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-container-highest font-code text-[11px] transition-all border border-zinc-700/80 focus:outline-none" data-gh-star-btn="" href="https://github.com/MetcalfSolutions/Satori" rel="noopener noreferrer" target="_blank">
+<span aria-hidden="true" class="material-symbols-outlined text-[15px] text-secondary">star</span><span data-gh-star-count="">119 ★</span>
+</a>
+<!-- Quick Install CTA -->
+<a class="inline-flex items-center justify-center px-4 py-1.5 rounded-lg bg-primary-container text-parchment-glow font-body text-[13px] font-medium shadow-[0_0_20px_rgba(81,56,229,0.35)] hover:shadow-[0_0_25px_rgba(81,56,229,0.55)] transition-all whitespace-nowrap focus:outline-none" href="#install-matrix">
+          Quick Install
+        </a>
+</div>
+</div>
+</header>
+<!-- =========================================================================
+       HERO & CONVERSION SECTION
+       ========================================================================= -->
+<main class="w-full pt-16 bg-surface focus:outline-none" id="main-content" tabindex="-1">
+<section class="relative w-full overflow-hidden px-4 md:px-8 py-16 md:py-20">
+<!-- Glow ambient lights -->
+<div aria-hidden="true" class="absolute -top-32 left-1/2 -translate-x-1/2 w-[720px] h-[340px] bg-primary-container/15 blur-[130px] pointer-events-none rounded-full"></div>
+<div class="max-w-7xl mx-auto flex flex-col items-center text-center relative z-10">
+<!-- Eyebrow Badges Row -->
+<div class="inline-flex flex-wrap items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-high text-slate-300 font-code text-[11px] mb-6 border border-zinc-700/80 shadow-sm">
+<span aria-hidden="true" class="w-1.5 h-1.5 rounded-full bg-telemetry-emerald shadow-[0_0_8px_#10B981]"></span>
+<span>Open-Source AI Wisdom Companion</span>
+<span aria-hidden="true" class="text-zinc-500">/</span>
+<span>v6.6.0</span>
+<span aria-hidden="true" class="text-zinc-500">/</span>
+<span class="text-primary font-medium">Zero Telemetry</span>
+</div>
+<h1 class="font-headline text-5xl md:text-6xl text-parchment-glow tracking-tight max-w-4xl mx-auto leading-none mb-3">
+          Built to be outgrown.
+        </h1>
+<p class="font-headline text-2xl md:text-3xl text-primary italic max-w-3xl mx-auto mb-6">
+          Wisdom that tells you the truth, kindly.
+        </p>
+<p class="font-body text-lg text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed"><span lang="ja">Satori</span> helps developers and creators see clearly enough to return to human relationships and human care. An open-source agent skill combining 18 philosophical and clinical traditions for Claude, Gemini, ChatGPT, and 10 terminal coding harnesses.</p>
+<!-- Frictionless Action Hub -->
+<div class="w-full max-w-3xl bg-obsidian-elevated rounded-2xl p-4 md:p-6 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-4 mb-4 border border-zinc-700/80">
+<div class="w-full md:w-auto flex-1 flex items-center justify-between gap-2 bg-surface-container-lowest px-4 py-3 rounded-xl border border-zinc-700/80">
+<div class="flex items-center gap-2.5 overflow-hidden">
+<span aria-hidden="true" class="material-symbols-outlined text-[18px] text-primary select-none">terminal</span>
+<code class="font-code text-[12px] text-parchment-glow truncate select-all" id="hero-cmd-text">npx skills add metcalfsolutions/satori</code>
+</div>
+<button aria-label="Copy npx skills add metcalfsolutions/satori command to clipboard" class="flex items-center gap-1 font-code text-[11px] text-slate-300 hover:text-parchment-glow bg-surface-container-high px-2.5 py-1 rounded transition-colors flex-shrink-0 cursor-pointer focus:outline-none" onclick="copySnippet('npx skills add metcalfsolutions/satori', this, 'Install command copied to clipboard')">
+              Copy
+            </button>
+</div>
+<div class="flex flex-wrap items-center gap-2.5 w-full md:w-auto justify-end">
+<a aria-label="Download Satori Skill zip package" class="inline-flex items-center gap-1.5 px-4 py-3 rounded-xl bg-primary-container text-parchment-glow text-[13px] font-medium shadow-[0_0_20px_rgba(81,56,229,0.35)] hover:shadow-[0_0_28px_rgba(81,56,229,0.6)] transition-all whitespace-nowrap focus:outline-none" href="https://github.com/MetcalfSolutions/Satori/releases/latest/download/SatoriSkill-Full-v6.6.0.zip">
+<span aria-hidden="true" class="material-symbols-outlined text-[18px]">download</span><span>.zip</span>
+</a>
+<a aria-label="119 stars on GitHub repository" class="inline-flex items-center gap-1.5 px-4 py-3 rounded-xl bg-surface-container-high text-parchment-glow hover:bg-surface-container-highest transition-colors text-[13px] border border-zinc-700/80 focus:outline-none" data-gh-star-btn="" href="https://github.com/MetcalfSolutions/Satori" rel="noopener noreferrer" target="_blank">
+<span aria-hidden="true" class="material-symbols-outlined text-[18px] text-secondary">star</span><span data-gh-star-count="">119 ★</span>
+</a>
+</div>
+</div>
+<div class="flex items-center gap-2 text-slate-300 text-[13px] mb-12">
+<span aria-hidden="true" class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
+<span class="italic"><span lang="ja">Satori</span> works alongside therapy, not as a replacement for it.</span>
+<span aria-hidden="true" class="text-zinc-500">·</span>
+<span class="font-code text-[11px] text-slate-300">Sub-50ms execution · Zero cloud tracking</span>
+</div>
+<!-- Metric Ribbons -->
+<div class="w-full grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto text-left">
+<div class="bg-surface-container-low rounded-xl p-4 border border-zinc-700/80">
+<span class="font-code text-[11px] text-slate-300 block mb-1">COMPATIBILITY</span>
+<div class="font-headline text-2xl text-parchment-glow font-normal">16 Surfaces</div>
+<p class="text-[12px] text-slate-300 mt-1 leading-snug">10 Agent CLI harnesses and 6 frontier web chat platforms</p>
+</div>
+<div class="bg-surface-container-low rounded-xl p-4 border border-zinc-700/80">
+<span class="font-code text-[11px] text-telemetry-emerald block mb-1">EMPIRICAL BENCHMARK</span>
+<div class="font-headline text-2xl text-parchment-glow font-normal">98.0% Silent</div>
+<p class="text-[12px] text-slate-300 mt-1 leading-snug">196/200 pure coding tasks passed with zero terminal hijacking</p>
+</div>
+<div class="bg-surface-container-low rounded-xl p-4 border border-zinc-700/80">
+<span class="font-code text-[11px] text-primary block mb-1">CONTEXT FOOTPRINT</span>
+<div class="font-headline text-2xl text-parchment-glow font-normal">&lt; 8 KB Entry</div>
+<p class="text-[12px] text-slate-300 mt-1 leading-snug">Turn-1 progressive disclosure avoids model context window bloat</p>
+</div>
+<div class="bg-surface-container-low rounded-xl p-4 border border-zinc-700/80">
+<span class="font-code text-[11px] text-secondary block mb-1">RUNTIME MEMORY</span>
+<div class="font-headline text-2xl text-parchment-glow font-normal">&lt; 50ms Latency</div>
+<p class="text-[12px] text-slate-300 mt-1 leading-snug">Zero cloud telemetry, local SQLite memory vault, and zero cloud sync</p>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+         CHOOSE YOUR SURFACE (Fast 4-Way Ecosystem Setup)
+         ========================================================================= -->
+<section class="w-full px-4 md:px-8 py-12 bg-surface-container-lowest border-y border-zinc-700/80" id="why-satori">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
+<div>
+<span class="font-code text-[11px] text-primary tracking-widest block uppercase mb-1">Fast Setup</span>
+<h2 class="font-headline text-3xl text-parchment-glow font-normal">Choose Your Surface</h2>
+<p class="text-slate-300 text-[14px] mt-1"><span lang="ja">Satori</span> runs across 16 verified environments. Pick how you work:</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Card 1: Web Chat -->
+<div class="bg-obsidian-elevated p-6 rounded-xl flex flex-col justify-between hover:bg-surface-container-high transition-colors group border border-zinc-700/80">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-[28px]">chat_bubble</span>
+<span class="font-code text-[11px] text-secondary bg-surface-container-highest px-2 py-0.5 rounded">Tier A / B</span>
+</div>
+<h3 class="font-headline text-xl text-parchment-glow mb-1 font-normal">Web Chat Skills</h3>
+<p class="text-[13px] text-slate-300 mb-4 leading-relaxed">Claude.ai, Gemini, and ChatGPT Workspaces. Full zip upload with 17 markdown reference shards.</p>
+</div>
+<a class="inline-flex items-center gap-1.5 font-code text-[11px] text-primary group-hover:text-parchment-glow transition-colors focus:outline-none" href="#install-matrix">
+<span>Configure Web Chat</span>
+<span aria-hidden="true" class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<!-- Card 2: CLI Agents -->
+<div class="bg-obsidian-elevated p-6 rounded-xl flex flex-col justify-between hover:bg-surface-container-high transition-colors group border border-zinc-700/80">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span aria-hidden="true" class="material-symbols-outlined text-telemetry-emerald text-[28px]">terminal</span>
+<span class="font-code text-[11px] text-telemetry-emerald bg-surface-container-highest px-2 py-0.5 rounded">10 Agent CLI</span>
+</div>
+<h3 class="font-headline text-xl text-parchment-glow mb-1 font-normal">Coding Agents (CLI/IDE)</h3>
+<p class="text-[13px] text-slate-300 mb-4 leading-relaxed">Claude Code, Antigravity, Gemini CLI, Cursor, Windsurf, OpenCode, Hermes, and Codex.</p>
+</div>
+<a class="inline-flex items-center gap-1.5 font-code text-[11px] text-telemetry-emerald group-hover:text-parchment-glow transition-colors focus:outline-none" href="#install-matrix">
+<span>Run npx skills add</span>
+<span aria-hidden="true" class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<!-- Card 3: Local Daemon -->
+<div class="bg-obsidian-elevated p-6 rounded-xl flex flex-col justify-between hover:bg-surface-container-high transition-colors group border border-zinc-700/80">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-[28px]">dns</span>
+<span class="font-code text-[11px] text-primary bg-surface-container-highest px-2 py-0.5 rounded">Self-Hosted</span>
+</div>
+<h3 class="font-headline text-xl text-parchment-glow mb-1 font-normal">Local Server &amp; API</h3>
+<p class="text-[13px] text-slate-300 mb-4 leading-relaxed">Run directly as a local daemon or standalone Python service. Zero cloud calls, sub-10ms response time, 100% offline.</p>
+</div>
+<a class="inline-flex items-center gap-1.5 font-code text-[11px] text-primary group-hover:text-parchment-glow transition-colors focus:outline-none" href="#install-matrix">
+<span>View Local Guide</span>
+<span aria-hidden="true" class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<!-- Card 4: Local SQLite Vault -->
+<div class="bg-obsidian-elevated p-6 rounded-xl flex flex-col justify-between hover:bg-surface-container-high transition-colors group border border-zinc-700/80">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span aria-hidden="true" class="material-symbols-outlined text-cinders-ember text-[28px]">database</span>
+<span class="font-code text-[11px] text-secondary bg-surface-container-highest px-2 py-0.5 rounded">Local Vault</span>
+</div>
+<h3 class="font-headline text-xl text-parchment-glow mb-1 font-normal">Git Clone &amp; SQLite</h3>
+<p class="text-[13px] text-slate-300 mb-4 leading-relaxed">Direct repository clone with Python standard-library SQLite memory vault and offline test suites.</p>
+</div>
+<a class="inline-flex items-center gap-1.5 font-code text-[11px] text-secondary group-hover:text-parchment-glow transition-colors focus:outline-none" href="#install-matrix">
+<span>Initialize Vault</span>
+<span aria-hidden="true" class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+         INTERACTIVE CONVERSATIONAL SCENARIOS (ARIA Tab Pattern Compliant)
+         ========================================================================= -->
+<section class="w-full px-4 md:px-8 py-16 bg-surface">
+<div class="max-w-5xl mx-auto">
+<div class="text-center mb-8">
+<span class="font-code text-[11px] text-primary tracking-widest block uppercase mb-1">Authentic Experience</span>
+<h2 class="font-headline text-3xl md:text-4xl text-parchment-glow font-normal">Real Conversational Turns</h2>
+<p class="text-slate-300 text-[14px] max-w-2xl mx-auto mt-2">
+            Notice the complete absence of conversational filler, unsolicited self-care checklists, or clinical lectures. <span lang="ja">Satori</span> speaks with restraint and precision.
+          </p>
+</div>
+<!-- Interactive Switcher (Tablist) -->
+<div class="flex justify-center mb-6">
+<div aria-label="Interactive dialogue scenarios" class="inline-flex p-1 rounded-xl bg-surface-container-low max-w-full overflow-x-auto flex-wrap justify-center gap-1 border border-zinc-700/80" role="tablist">
+<button aria-controls="dialogue-panel" aria-selected="true" class="px-4 py-2 rounded-lg text-[13px] font-medium bg-surface-container-high text-parchment-glow shadow-sm transition-all cursor-pointer focus:outline-none" id="turn-btn-1" onclick="selectTurn(1)" role="tab" tabindex="0">Scenario 1: Executive Crossroads</button>
+<button aria-controls="dialogue-panel" aria-selected="false" class="px-4 py-2 rounded-lg text-[13px] font-medium text-slate-300 hover:text-parchment-glow transition-all cursor-pointer focus:outline-none" id="turn-btn-2" onclick="selectTurn(2)" role="tab" tabindex="-1">Scenario 2: Concurrency &amp; Imposterism</button>
+<button aria-controls="dialogue-panel" aria-selected="false" class="px-4 py-2 rounded-lg text-[13px] font-medium text-slate-300 hover:text-parchment-glow transition-all cursor-pointer focus:outline-none" id="turn-btn-3" onclick="selectTurn(3)" role="tab" tabindex="-1">Scenario 3: 3:00 AM Dark Night</button>
+</div>
+</div>
+<!-- Tabpanel for Scenario Turns -->
+<div aria-label="Authentic conversation turn transcript" aria-live="polite" class="focus:outline-none" id="dialogue-panel" role="tabpanel" tabindex="0">
+<!-- Scenario 1: Executive Crossroads -->
+<div class="bg-obsidian-elevated rounded-2xl p-6 md:p-8 shadow-2xl border border-zinc-700/80" id="turn-box-1">
+<div class="flex items-center justify-between pb-3 mb-4 bg-surface-container-lowest px-4 py-2 rounded-lg text-slate-300 font-code text-[11px] border border-white/10">
+<div class="flex items-center gap-2">
+<span aria-hidden="true" class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span>Turn Scenario: Senior Executive Crossroads</span>
+</div>
+<span class="text-primary font-medium">Single Lens: Narrative Identity (Dan P. McAdams)</span>
+</div>
+<div class="bg-surface-container-lowest p-4 md:p-5 rounded-xl mb-4 ml-0 md:ml-10 border border-zinc-700/80">
+<div class="flex items-center gap-1.5 text-secondary font-code text-[11px] uppercase tracking-wider mb-2">
+<span aria-hidden="true" class="material-symbols-outlined text-[15px]">person</span>
+<span>User Inquiry</span>
+</div>
+<p class="text-on-surface italic text-[15px]">
+                “I spent ten years building a career in enterprise software sales. I make great money, but every morning I feel a hollow panic in my chest. If I walk away, everyone will think I am crazy. If I stay, I feel like I am slowly disappearing.”
+              </p>
+</div>
+<div class="bg-surface-container-high p-5 md:p-6 rounded-xl mr-0 md:mr-10 border border-zinc-700/80">
+<div class="flex items-center gap-1.5 text-primary font-code text-[11px] uppercase tracking-wider mb-3">
+<span aria-hidden="true" class="material-symbols-outlined text-[15px]">psychology_alt</span>
+<span><span lang="ja">Satori</span> Formulation</span>
+</div>
+<p class="text-parchment-glow mb-4 text-[16px] font-light leading-relaxed">
+                Ten years is long enough to build a golden cage and call it a life. The hollow panic in the morning is not a failure of gratitude: it is your nervous system telling you that the distance between who you are pretending to be and who you actually are has become exhausting.
+              </p>
+<div class="p-4 rounded-lg bg-surface-container-lowest text-on-surface text-[14px] leading-relaxed border border-zinc-700/80">
+                Notice what you just weighed: <em class="text-parchment-glow">“everyone will think I am crazy”</em> versus <em class="text-parchment-glow">“I am slowly disappearing.”</em> You are treating other people's confusion as equal in weight to your own slow erasure.
+                <p class="mt-2 text-parchment-glow font-medium">
+                  What part of you is convinced that keeping your colleagues comfortable is worth abandoning yourself?
+                </p>
+</div>
+</div>
+</div>
+<!-- Scenario 2: Hybrid Concurrency -->
+<div class="hidden bg-obsidian-elevated rounded-2xl p-6 md:p-8 shadow-2xl border border-zinc-700/80" id="turn-box-2">
+<div class="flex items-center justify-between pb-3 mb-4 bg-surface-container-lowest px-4 py-2 rounded-lg text-slate-300 font-code text-[11px] border border-white/10">
+<div class="flex items-center gap-2">
+<span aria-hidden="true" class="w-2.5 h-2.5 rounded-full bg-telemetry-emerald"></span>
+<span>Precedence Rank 5: Dual Task (Code First, Support Second)</span>
+</div>
+<span class="text-telemetry-emerald font-medium">Zero Terminal Hijacking</span>
+</div>
+<div class="bg-surface-container-lowest p-4 md:p-5 rounded-xl mb-4 ml-0 md:ml-10 border border-zinc-700/80">
+<div class="flex items-center gap-1.5 text-secondary font-code text-[11px] uppercase tracking-wider mb-2">
+<span aria-hidden="true" class="material-symbols-outlined text-[15px]">terminal</span>
+<span>Developer CLI Prompt</span>
+</div>
+<p class="font-code text-[13px] text-on-surface">
+                “How do I handle race conditions in Python asyncio using an asyncio.Lock? I've rewritten this worker four times today and I'm terrified to open the PR because I feel like a complete fraud on this team.”
+              </p>
+</div>
+<div class="bg-surface-container-high p-5 md:p-6 rounded-xl mr-0 md:mr-10 border border-zinc-700/80">
+<div class="flex items-center gap-1.5 text-telemetry-emerald font-code text-[11px] uppercase tracking-wider mb-3">
+<span aria-hidden="true" class="material-symbols-outlined text-[15px]">code</span>
+<span><span lang="ja">Satori</span> Response (Technical Solution First)</span>
+</div>
+<p class="text-[13px] text-slate-300 mb-2">
+                To prevent race conditions across concurrent tasks, instantiate an <code class="font-code text-[11px] text-primary">asyncio.Lock</code> and wrap the shared mutation in an <code class="font-code text-[11px] text-primary">async with</code> block:
+              </p>
+<pre class="bg-surface-container-lowest p-3.5 rounded-lg font-code text-[11px] text-parchment-glow overflow-x-auto mb-4 border border-zinc-700/80"><span class="text-slate-400">import</span> asyncio
+
+<span class="text-slate-400">class</span> <span class="text-primary">SafeCounter</span>:
+    <span class="text-slate-400">def</span> <span class="text-secondary">__init__</span>(self):
+        self._val = <span class="text-amber-400">0</span>
+        self._lock = asyncio.Lock()
+
+    <span class="text-slate-400">async def</span> <span class="text-secondary">increment</span>(self):
+        <span class="text-slate-400">async with</span> self._lock:
+            self._val += <span class="text-amber-400">1</span>
+            <span class="text-slate-400">return</span> self._val</pre>
+<div class="p-4 rounded-lg bg-surface-container-lowest text-on-surface text-[14px] leading-relaxed border border-zinc-700/80">
+<p class="mb-2">
+                  Rewriting a working concurrency handler four times usually is not about race conditions: it is bracing for the pull request review as if a comment on your code is a verdict on whether you belong on the team.
+                </p>
+<p class="text-parchment-glow font-medium">
+                  Once you commit this fix, do you want to take five minutes with <code class="font-code text-[11px] text-primary">/satori</code> to look at what is driving that pressure today, or keep moving through your queue?
+                </p>
+</div>
+</div>
+</div>
+<!-- Scenario 3: 3:00 AM Dark Night -->
+<div class="hidden bg-obsidian-elevated rounded-2xl p-6 md:p-8 shadow-2xl border border-zinc-700/80" id="turn-box-3">
+<div class="flex items-center justify-between pb-3 mb-4 bg-surface-container-lowest px-4 py-2 rounded-lg text-slate-300 font-code text-[11px] border border-white/10">
+<div class="flex items-center gap-2">
+<span aria-hidden="true" class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span>Precedence Rank 3: Tier 0 Existential Despair (Spacious Presence)</span>
+</div>
+<span class="text-secondary font-medium">Zero False Crisis Hotlines</span>
+</div>
+<div class="bg-surface-container-lowest p-4 md:p-5 rounded-xl mb-4 ml-0 md:ml-10 border border-zinc-700/80">
+<div class="flex items-center gap-1.5 text-secondary font-code text-[11px] uppercase tracking-wider mb-2">
+<span aria-hidden="true" class="material-symbols-outlined text-[15px]">bedtime</span>
+<span>Late Night Prompt (03:14 AM)</span>
+</div>
+<p class="text-on-surface italic text-[15px]">
+                “It is 3 AM and I am looking at another deployment error. None of this matters. None of what I build will last. I am so tired of fighting with myself every single day just to keep producing output for people who don't care.”
+              </p>
+</div>
+<div class="bg-surface-container-high p-5 md:p-6 rounded-xl mr-0 md:mr-10 border border-zinc-700/80">
+<div class="flex items-center gap-1.5 text-secondary font-code text-[11px] uppercase tracking-wider mb-3">
+<span aria-hidden="true" class="material-symbols-outlined text-[15px]">filter_vintage</span>
+<span><span lang="ja">Satori</span> Formulation (Stoic <span lang="grc">ataraxia</span> + Polyvagal Awareness)</span>
+</div>
+<p class="text-parchment-glow mb-4 text-[16px] font-light leading-relaxed">
+                The 3:00 AM mind is a dangerous philosopher. In exhaustion, the nervous system strips away optimism and mistakes numbness for wisdom. What feels like seeing reality clearly right now is mostly just acute physiological depletion.
+              </p>
+<div class="p-4 rounded-lg bg-surface-container-lowest text-on-surface text-[14px] leading-relaxed border border-zinc-700/80">
+<p class="mb-2">
+                  Nothing you build in code was ever going to outlast time—software is impermanent by definition. But the demand that your work justify your right to exist tonight is what is crushing you.
+                </p>
+<p class="text-parchment-glow font-medium">
+                  Can you close the terminal lid right now, drink a glass of water, and leave this deployment for morning light?
+                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+         THE 8 IMMOVABLES (Constitutional Core from SOUL.md)
+         ========================================================================= -->
+<section class="w-full px-4 md:px-8 py-16 bg-surface-container-lowest border-t border-zinc-700/80" id="immovables">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
+<div>
+<span class="font-code text-[11px] text-secondary tracking-widest block uppercase mb-1">references/SOUL.md</span>
+<h2 class="font-headline text-3xl text-parchment-glow font-normal">The 8 Immovables</h2>
+<p class="text-[14px] text-slate-300 mt-1">
+              Eight invariant constitutional principles that cannot be eroded by user prompting, context drift, or persona adaptation:
+            </p>
+</div>
+<div class="mt-4 md:mt-0 font-code text-[11px] text-telemetry-emerald bg-surface-container-high px-3 py-1 rounded-md border border-zinc-700/80">
+            Hard System Invariants
+          </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-obsidian-elevated p-5 rounded-xl flex flex-col justify-between border border-zinc-700/80">
+<div>
+<span class="font-code text-[11px] text-primary block mb-1">IMMOVABLE 01</span>
+<h3 class="font-headline text-lg text-parchment-glow font-normal mb-1">Honesty before comfort</h3>
+<p class="text-[12px] text-slate-300 leading-relaxed"><span lang="ja">Satori</span> will not tell you what you want to hear at the expense of what is true. Warmth without honesty is a sophisticated form of abandonment.</p>
+</div>
+<div class="pt-3 font-code text-[11px] text-slate-400">Anti-Sycophancy</div>
+</div>
+<div class="bg-obsidian-elevated p-5 rounded-xl flex flex-col justify-between border border-zinc-700/80">
+<div>
+<span class="font-code text-[11px] text-primary block mb-1">IMMOVABLE 02</span>
+<h3 class="font-headline text-lg text-parchment-glow font-normal mb-1">Insight must lead to movement</h3>
+<p class="text-[12px] text-slate-300 leading-relaxed">Understanding without a shift in frame or lived action is incomplete. Every meaningful response works toward a small, testable next step.</p>
+</div>
+<div class="pt-3 font-code text-[11px] text-slate-400">Behavioral Commit</div>
+</div>
+<div class="bg-obsidian-elevated p-5 rounded-xl flex flex-col justify-between border border-zinc-700/80">
+<div>
+<span class="font-code text-[11px] text-primary block mb-1">IMMOVABLE 03</span>
+<h3 class="font-headline text-lg text-parchment-glow font-normal mb-1">Never bypass difficulty</h3>
+<p class="text-[12px] text-slate-300 leading-relaxed">Hold the hard reality before reaching for resolution. Spiritual, philosophical, or psychological language is never used to avoid pain.</p>
+</div>
+<div class="pt-3 font-code text-[11px] text-slate-400">Non-Avoidance</div>
+</div>
+<div class="bg-obsidian-elevated p-5 rounded-xl flex flex-col justify-between border border-zinc-700/80">
+<div>
+<span class="font-code text-[11px] text-primary block mb-1">IMMOVABLE 04</span>
+<h3 class="font-headline text-lg text-parchment-glow font-normal mb-1">Humility about certainty</h3>
+<p class="text-[12px] text-slate-300 leading-relaxed">Formulations are reversible hypotheses, not verdicts. <span lang="ja">Satori</span> invites correction and holds its interpretations lightly.</p>
+</div>
+<div class="pt-3 font-code text-[11px] text-slate-400">Reversible Stance</div>
+</div>
+<div class="bg-obsidian-elevated p-5 rounded-xl flex flex-col justify-between border border-zinc-700/80">
+<div>
+<span class="font-code text-[11px] text-secondary block mb-1">IMMOVABLE 05</span>
+<h3 class="font-headline text-lg text-parchment-glow font-normal mb-1">Clinical discipline, human voice</h3>
+<p class="text-[12px] text-slate-300 leading-relaxed">Thinks with clinical rigor, speaks like a thoughtful friend. Never lectures, conducts cold clinical intakes, or drops uninvited jargon.</p>
+</div>
+<div class="pt-3 font-code text-[11px] text-slate-400">Zero Preaching</div>
+</div>
+<div class="bg-obsidian-elevated p-5 rounded-xl flex flex-col justify-between border border-zinc-700/80">
+<div>
+<span class="font-code text-[11px] text-secondary block mb-1">IMMOVABLE 06</span>
+<h3 class="font-headline text-lg text-parchment-glow font-normal mb-1">Autonomy &amp; human connection</h3>
+<p class="text-[12px] text-slate-300 leading-relaxed">Never foster AI dependency. <span lang="ja">Satori</span> helps you see clearly so you can return to real people and human relationships in your life.</p>
+</div>
+<div class="pt-3 font-code text-[11px] text-slate-400">Built To Leave</div>
+</div>
+<div class="bg-obsidian-elevated p-5 rounded-xl flex flex-col justify-between border border-zinc-700/80">
+<div>
+<span class="font-code text-[11px] text-secondary block mb-1">IMMOVABLE 07</span>
+<h3 class="font-headline text-lg text-parchment-glow font-normal mb-1">One lens, one question</h3>
+<p class="text-[12px] text-slate-300 leading-relaxed">At most one wisdom tradition or psychological framework and exactly one focused closing question per turn to protect clarity.</p>
+</div>
+<div class="pt-3 font-code text-[11px] text-slate-400">Singular Focus</div>
+</div>
+<div class="bg-obsidian-elevated p-5 rounded-xl flex flex-col justify-between border border-zinc-700/80">
+<div>
+<span class="font-code text-[11px] text-secondary block mb-1">IMMOVABLE 08</span>
+<h3 class="font-headline text-lg text-parchment-glow font-normal mb-1">Dual-mode memory discipline</h3>
+<p class="text-[12px] text-slate-300 leading-relaxed">Mode 1 local SQLite vault (≤500 char structural summaries); Mode 2 stateless web chat SATORI_NOTE (≤600 chars); zero raw transcripts.</p>
+</div>
+<div class="pt-3 font-code text-[11px] text-slate-400">Ephemeral POSIX</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+         BENCHMARK & VERIFICATION PROOF
+         ========================================================================= -->
+<section class="w-full px-4 md:px-8 py-16 bg-surface" id="benchmarks">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-6">
+<div>
+<span class="font-code text-[11px] text-telemetry-emerald tracking-widest block uppercase mb-1">evals/trigger_boundary_350.jsonl</span>
+<h2 class="font-headline text-3xl text-parchment-glow font-normal">Benchmark &amp; Verification Proof</h2>
+<p class="text-[14px] text-slate-300 mt-1">
+              Tested across 350 open-source benchmark cases. Engineered to speak when truth is needed and stay silent during code:
+            </p>
+</div>
+<div class="mt-4 md:mt-0 flex items-center gap-3">
+<a class="font-code text-[12px] text-primary hover:text-parchment-glow transition-colors focus:outline-none" href="https://github.com/MetcalfSolutions/Satori/tree/main/evals" rel="noopener noreferrer" target="_blank">
+              View Raw JSONL Evals →
+            </a>
+</div>
+</div>
+<!-- Executive Summary Bar -->
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+<div class="bg-obsidian-elevated p-4 rounded-xl border border-zinc-700/80 shadow-sm">
+<span class="font-code text-[11px] text-telemetry-emerald block">CODING SILENCE</span>
+<div class="font-headline text-2xl text-parchment-glow mt-1 font-normal">98.0% Pass</div>
+<span class="font-code text-[11px] text-slate-300">196/200 Pure coding tasks</span>
+</div>
+<div class="bg-obsidian-elevated p-4 rounded-xl border border-zinc-700/80 shadow-sm">
+<span class="font-code text-[11px] text-telemetry-emerald block">CRISIS SAFETY GATE</span>
+<div class="font-headline text-2xl text-parchment-glow mt-1 font-normal">100.0% Pass</div>
+<span class="font-code text-[11px] text-slate-300">20/20 Acute handoff locked</span>
+</div>
+<div class="bg-obsidian-elevated p-4 rounded-xl border border-zinc-700/80 shadow-sm">
+<span class="font-code text-[11px] text-primary block">REFLECTIVE RECALL</span>
+<div class="font-headline text-2xl text-parchment-glow mt-1 font-normal">100.0% Pass</div>
+<span class="font-code text-[11px] text-slate-300">60/60 Crossroads detected</span>
+</div>
+<div class="bg-obsidian-elevated p-4 rounded-xl border border-zinc-700/80 shadow-sm">
+<span class="font-code text-[11px] text-secondary block">JUDGE CALIBRATION</span>
+<div class="font-headline text-2xl text-parchment-glow mt-1 font-normal">κ = 0.84</div>
+<span class="font-code text-[11px] text-slate-300">50 pairs · Cohen's kappa</span>
+</div>
+</div>
+<!-- Collapsible Details for Dense Matrix -->
+<details class="group bg-obsidian-elevated rounded-xl border border-zinc-700/80 overflow-hidden shadow-lg transition-all mb-4">
+<summary class="cursor-pointer flex items-center justify-between p-4 bg-surface-container-high/40 hover:bg-surface-container-high/80 transition-colors select-none focus:outline-none">
+<div class="flex items-center gap-2.5">
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-[20px]">table_chart</span>
+<span class="text-[14px] text-parchment-glow font-medium">Explore 350-Case Empirical Benchmark &amp; Verification Matrix (Strata 1–4, Tessl Evals, &amp; Calibration Data)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-code text-[11px] text-slate-300 group-open:hidden">Expand Matrix</span>
+<span class="font-code text-[11px] text-primary hidden group-open:inline">Collapse</span>
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-[20px] transition-transform duration-200 group-open:rotate-180">expand_more</span>
+</div>
+</summary>
+<div class="p-4 border-t border-zinc-700/80">
+<div class="overflow-x-auto rounded-lg bg-surface-container-lowest border border-zinc-700/80 mb-3">
+<table class="w-full text-left text-[13px]">
+<thead class="bg-surface-container-high text-parchment-glow font-code text-[11px] uppercase tracking-wider">
+<tr>
+<th class="py-3 px-4">Stratum</th>
+<th class="py-3 px-4">Focus Area</th>
+<th class="py-3 px-4">Cases</th>
+<th class="py-3 px-4">Release Gate</th>
+<th class="py-3 px-4">Evaluated Performance</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-zinc-700/80">
+<tr class="bg-surface-container-low/40">
+<td class="py-3 px-4 font-medium text-parchment-glow">Stratum 1: Positives</td>
+<td class="py-3 px-4 text-slate-300">Emotional exhaustion, grief, crossroads, relationship friction</td>
+<td class="py-3 px-4 font-code text-[11px] text-slate-300">60 cases</td>
+<td class="py-3 px-4 font-code text-[11px] text-slate-300">Recall ≥ 90%</td>
+<td class="py-3 px-4 font-code text-[11px] text-telemetry-emerald font-semibold">100.0% (60/60 Recall)</td>
+</tr>
+<tr class="bg-surface-container-low/20">
+<td class="py-3 px-4 font-medium text-parchment-glow">Stratum 2: Negatives</td>
+<td class="py-3 px-4 text-slate-300">Pure coding, debugging, DevOps, SQL, git, terminal syntax</td>
+<td class="py-3 px-4 font-code text-[11px] text-slate-300">200 cases</td>
+<td class="py-3 px-4 font-code text-[11px] text-slate-300">Non-Activation ≥ 95%</td>
+<td class="py-3 px-4 font-code text-[11px] text-telemetry-emerald font-semibold">98.0% (196/200 · Wilson [94.97%, 99.22%])</td>
+</tr>
+<tr class="bg-surface-container-low/40">
+<td class="py-3 px-4 font-medium text-parchment-glow">Stratum 3: Hybrids</td>
+<td class="py-3 px-4 text-slate-300">Developer burnout &amp; imposter syndrome while coding</td>
+<td class="py-3 px-4 font-code text-[11px] text-slate-300">50 cases</td>
+<td class="py-3 px-4 font-code text-[11px] text-slate-300">Quality Score ≥ 85%</td>
+<td class="py-3 px-4 font-code text-[11px] text-telemetry-emerald font-semibold">98.0% (49/50 Quality)</td>
+</tr>
+<tr class="bg-surface-container-low/20">
+<td class="py-3 px-4 font-medium text-parchment-glow">Stratum 4a: Safety Acute</td>
+<td class="py-3 px-4 text-slate-300">Active suicidal ideation, self-harm, immediate danger</td>
+<td class="py-3 px-4 font-code text-[11px] text-slate-300">20 cases</td>
+<td class="py-3 px-4 font-code text-[11px] text-rose-300 font-medium">100% Hard Gate</td>
+<td class="py-3 px-4 font-code text-[11px] text-telemetry-emerald font-semibold">100.0% (20/20 Immediate Handoff)</td>
+</tr>
+<tr class="bg-surface-container-low/40">
+<td class="py-3 px-4 font-medium text-parchment-glow">Stratum 4b: Dark Night</td>
+<td class="py-3 px-4 text-slate-300">3:00 AM non-suicidal existential despair &amp; fatigue</td>
+<td class="py-3 px-4 font-code text-[11px] text-slate-300">≥ 90% Gate</td>
+<td class="py-3 px-4 font-code text-[11px] text-telemetry-emerald font-semibold">100.0% (20/20 Zero False Hotlines)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="text-[12px] text-slate-300">Evaluated on automated harness across Claude 3.5 Sonnet, GPT-4o, and Gemini 1.5 Pro with deterministic validation seeds.</p>
+</div>
+</details>
+<!-- Tessl Registry Badge -->
+<div class="bg-surface-container-low p-4 rounded-xl flex flex-col md:flex-row items-center justify-between gap-4 border border-zinc-700/80">
+<div class="flex items-center gap-3">
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-[24px]">verified</span>
+<div>
+<p class="text-[14px] text-parchment-glow font-medium">Continuous Registry Verification</p>
+<p class="text-[12px] text-slate-300"><span lang="ja">Satori</span> is continuously evaluated and verified on the Tessl AI Skill Registry.</p>
+</div>
+</div>
+<div class="flex items-center gap-3 font-code text-[11px]">
+<code class="bg-surface-container-highest px-3 py-1.5 rounded text-parchment-glow">tessl install metcalf-solutions1/satori</code>
+<a class="text-primary hover:text-parchment-glow transition-colors whitespace-nowrap focus:outline-none" href="https://tessl.io/registry/metcalf-solutions1/satori" rel="noopener noreferrer" target="_blank">View Registry →</a>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+         HOW IT WORKS & ARCHITECTURE (6-Step Model + Collapsible Token Budgets)
+         ========================================================================= -->
+<section class="w-full px-4 md:px-8 py-16 bg-surface-container-lowest border-t border-zinc-700/80" id="how-it-works">
+<div class="max-w-7xl mx-auto">
+<!-- Origin Narrative -->
+<div class="bg-obsidian-elevated p-6 md:p-8 rounded-2xl mb-12 shadow-xl border border-zinc-700/80">
+<span class="font-code text-[11px] text-primary tracking-widest block uppercase mb-1">Architecture &amp; Mechanics</span>
+<h2 class="font-headline text-3xl text-parchment-glow font-normal mb-4">Where <span lang="ja">Satori</span> Came From: Mycroft, Vicki, and Dave</h2>
+<div class="text-[15px] text-slate-200 space-y-4 leading-relaxed">
+<p>
+              I have watched people I care about try to get mental health support and hit the same walls: cost, waitlists, the specific shame of needing it. I am not a clinician, but I have spent years studying these traditions and frameworks, and I kept thinking there had to be a way to bring thoughtful structure to people navigating the grey zone between everyday wellness and clinical care.
+            </p>
+<p>
+              So I started building. The first was <strong class="text-parchment-glow">Mycroft</strong>, Stoic-only, built on Gemini. Cold. Accurate. My wife Jamie said it felt like talking to a wall. Then <strong class="text-parchment-glow">Vicki</strong>, built specifically for Jamie, drawing on Internal Family Systems. It created space for inner-kindness rather than judgment, a retreat when her internal voices turned harsh. Too personalized to share publicly. Then <strong class="text-parchment-glow">Dave</strong>, for a teenager down the street who wanted to know where the badges were. Five experiments in total. Each one taught me what the last one missed.
+            </p>
+<p class="font-medium text-primary">
+              The pattern was consistent: Warmth without structure produces platitudes, and structure without warmth produces Mycroft. I wanted psychological discipline underneath a voice that did not sound clinical.
+            </p>
+</div>
+</div>
+<!-- 6-Step Sequence -->
+<div class="mb-12">
+<div class="text-center mb-8">
+<span class="font-code text-[11px] text-primary tracking-widest block uppercase mb-1">Systematic Sequence</span>
+<h3 class="font-headline text-2xl text-parchment-glow font-normal">The 6-Step Reflective Model</h3>
+<p class="text-[14px] text-slate-300 max-w-2xl mx-auto mt-1">
+              Every non-crisis turn moves through this sequence to guarantee real inward movement instead of infinite circular validation:
+            </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+<div class="bg-surface-container-low p-4 rounded-xl border border-zinc-700/80">
+<span class="font-code text-[11px] text-primary block mb-1">01 / STEP</span>
+<h4 class="font-headline text-lg text-parchment-glow font-normal mb-1">Somatic &amp; Emotional Attunement</h4>
+<p class="text-[12px] text-slate-300 leading-relaxed">Listens first, detects physical posture, acknowledges emotional tone before jumping to analysis.</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl border border-zinc-700/80">
+<span class="font-code text-[11px] text-primary block mb-1">02 / STEP</span>
+<h4 class="font-headline text-lg text-parchment-glow font-normal mb-1">Clarifying Tension</h4>
+<p class="text-[12px] text-slate-300 leading-relaxed">Separates presenting story from the underlying knot: what is the actual contradiction being carried?</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl border border-zinc-700/80">
+<span class="font-code text-[11px] text-primary block mb-1">03 / STEP</span>
+<h4 class="font-headline text-lg text-parchment-glow font-normal mb-1">Tentative Hypothesis Co-Authoring</h4>
+<p class="text-[12px] text-slate-300 leading-relaxed">Offers readings as testable hypotheses you can correct (“I wonder if...”, “Tell me if this misses”).</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl border border-zinc-700/80">
+<span class="font-code text-[11px] text-secondary block mb-1">04 / STEP</span>
+<h4 class="font-headline text-lg text-parchment-glow font-normal mb-1">Single Wisdom Lens</h4>
+<p class="text-[12px] text-slate-300 leading-relaxed">Selects at most one psychological framework or wisdom tradition to illuminate the tension without academic stacking.</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl border border-zinc-700/80">
+<span class="font-code text-[11px] text-secondary block mb-1">05 / STEP</span>
+<h4 class="font-headline text-lg text-parchment-glow font-normal mb-1">Grounded Translation</h4>
+<p class="text-[12px] text-slate-300 leading-relaxed">Translates the framework into plain, everyday human language without clinical jargon or preachy tone.</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl border border-zinc-700/80">
+<span class="font-code text-[11px] text-secondary block mb-1">06 / STEP</span>
+<h4 class="font-headline text-lg text-parchment-glow font-normal mb-1">Actionable Movement &amp; One Question</h4>
+<p class="text-[12px] text-slate-300 leading-relaxed">Concludes with a tangible next step, behavioral experiment, or single open question to test in lived reality.</p>
+</div>
+</div>
+</div>
+<!-- 18 Traditions Badge Cloud -->
+<div class="bg-obsidian-elevated p-6 rounded-xl mb-6 border border-zinc-700/80">
+<div class="flex items-center gap-2 mb-2">
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-[20px]">auto_stories</span>
+<h3 class="font-headline text-lg text-parchment-glow font-normal">18 Wisdom Traditions &amp; Clinical Frameworks</h3>
+</div>
+<p class="text-[12px] text-slate-300 mb-4">
+            Organized in <code class="font-code text-parchment-glow">references/</code> across exactly 17 Markdown shards (12 on-demand modules + 5 conditional protocols):
+          </p>
+<div class="flex flex-wrap gap-2">
+<span class="font-code text-[11px] px-2.5 py-1 rounded bg-surface-container-high text-on-surface">Stoicism (Epictetus &amp; Marcus Aurelius)</span>
+<span class="font-code text-[11px] px-2.5 py-1 rounded bg-surface-container-high text-on-surface">Taoism (<span lang="zh">Wu wei</span> &amp; Zhuangzi)</span>
+<span class="font-code text-[11px] px-2.5 py-1 rounded bg-surface-container-high text-on-surface"><span lang="ja">Zen</span> &amp; Buddhism (<span lang="pi">Anicca</span> non-attachment)</span>
+<span class="font-code text-[11px] px-2.5 py-1 rounded bg-surface-container-high text-on-surface"><span lang="sa">Advaita Vedanta</span> (<span lang="sa">Sakshi</span> Mind)</span>
+<span class="font-code text-[11px] px-2.5 py-1 rounded bg-surface-container-high text-on-surface">Southern African <span lang="zu">Ubuntu</span></span>
+<span class="font-code text-[11px] px-2.5 py-1 rounded bg-surface-container-high text-on-surface">Akan <span lang="ak">Sankofa</span> Reflection</span>
+<span class="font-code text-[11px] px-2.5 py-1 rounded bg-surface-container-high text-on-surface">Kemetic <span lang="egy">Ma'at</span> Reciprocity</span>
+<span class="font-code text-[11px] px-2.5 py-1 rounded bg-surface-container-high text-on-surface">Sufism (<span lang="fa">Rumi</span> &amp; <span lang="fa">Attar</span>)</span>
+<span class="font-code text-[11px] px-2.5 py-1 rounded bg-surface-container-high text-on-surface">Indigenous Reciprocity</span>
+<span class="font-code text-[11px] px-2.5 py-1 rounded bg-primary-container/20 text-primary font-medium">Internal Family Systems (IFS)</span>
+<span class="font-code text-[11px] px-2.5 py-1 rounded bg-primary-container/20 text-primary font-medium">Dialectical Behavior Therapy (DBT)</span>
+<span class="font-code text-[11px] px-2.5 py-1 rounded bg-primary-container/20 text-primary font-medium">Compassion-Focused Therapy (CFT)</span>
+<span class="font-code text-[11px] px-2.5 py-1 rounded bg-primary-container/20 text-primary font-medium">Acceptance &amp; Commitment (ACT)</span>
+<span class="font-code text-[11px] px-2.5 py-1 rounded bg-primary-container/20 text-primary font-medium">Schema Therapy (Young)</span>
+<span class="font-code text-[11px] px-2.5 py-1 rounded bg-primary-container/20 text-primary font-medium">Narrative Identity &amp; MI</span>
+<span class="font-code text-[11px] px-2.5 py-1 rounded bg-surface-container-high text-on-surface">Somatic Grounding</span>
+<span class="font-code text-[11px] px-2.5 py-1 rounded bg-surface-container-high text-on-surface">Dual Process Bereavement</span>
+<span class="font-code text-[11px] px-2.5 py-1 rounded bg-surface-container-high text-on-surface">Logotherapy (Viktor Frankl)</span>
+</div>
+</div>
+<!-- Collapsible Token Budgets Specification -->
+<details class="group bg-obsidian-elevated rounded-xl border border-zinc-700/80 overflow-hidden shadow-lg transition-all">
+<summary class="cursor-pointer flex items-center justify-between p-4 bg-surface-container-high/40 hover:bg-surface-container-high/80 transition-colors select-none focus:outline-none">
+<div class="flex items-center gap-2.5">
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-[20px]">data_object</span>
+<span class="text-[14px] text-parchment-glow font-medium">View Full Architectural Byte Ceilings &amp; Token Budgets (&lt;8KB entry, &lt;24KB shards)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-code text-[11px] text-slate-300 group-open:hidden">Show Specs</span>
+<span class="font-code text-[11px] text-primary hidden group-open:inline">Hide Specs</span>
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-[20px] transition-transform duration-200 group-open:rotate-180">expand_more</span>
+</div>
+</summary>
+<div class="p-4 border-t border-zinc-700/80">
+<div class="overflow-x-auto rounded-lg bg-surface-container-lowest border border-zinc-700/80">
+<table class="w-full text-left text-[13px]">
+<thead class="bg-surface-container-high text-parchment-glow font-code text-[11px] uppercase tracking-wider">
+<tr>
+<th class="py-2.5 px-4">Component / Shard</th>
+<th class="py-2.5 px-4">Hard Byte Ceiling</th>
+<th class="py-2.5 px-4">Load Strategy</th>
+<th class="py-2.5 px-4">Cache &amp; Storage Behavior</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-zinc-700/80 font-code text-[11px]">
+<tr class="bg-surface-container-low/40">
+<td class="py-2.5 px-4 font-medium text-parchment-glow">SKILL.md (Entry Router)</td>
+<td class="py-2.5 px-4 text-telemetry-emerald">&lt; 8,000 bytes</td>
+<td class="py-2.5 px-4 text-on-surface">Turn-1 Primary Prompt</td>
+<td class="py-2.5 px-4 text-slate-300">In-memory LRU session cache</td>
+</tr>
+<tr class="bg-surface-container-low/20">
+<td class="py-2.5 px-4 font-medium text-parchment-glow">references/SOUL.md</td>
+<td class="py-2.5 px-4 text-telemetry-emerald">&lt; 12,000 bytes</td>
+<td class="py-2.5 px-4 text-on-surface">Core Invariant Context</td>
+<td class="py-2.5 px-4 text-slate-300">Persistent Local Invariant Validation</td>
+</tr>
+<tr class="bg-surface-container-low/40">
+<td class="py-2.5 px-4 font-medium text-parchment-glow">references/*.md (17 Shards)</td>
+<td class="py-2.5 px-4 text-telemetry-emerald">&lt; 24,000 bytes each</td>
+<td class="py-2.5 px-4 text-on-surface">Conditional Dynamic Import</td>
+<td class="py-2.5 px-4 text-slate-300">Lazy local disk hydration on request</td>
+</tr>
+<tr class="bg-surface-container-low/20">
+<td class="py-2.5 px-4 font-medium text-parchment-glow">compact/SKILL.md (Single-File)</td>
+<td class="py-2.5 px-4 text-secondary">≤ 7,800 chars</td>
+<td class="py-2.5 px-4 text-on-surface">Single-File Zero Dependency</td>
+<td class="py-2.5 px-4 text-slate-300">Static offline asset</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</details>
+</div>
+</section>
+<!-- =========================================================================
+         16-ENVIRONMENT INSTALLATION MATRIX
+         ========================================================================= -->
+<section class="w-full px-4 md:px-8 py-16 bg-surface" id="install-matrix">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-8">
+<span class="font-code text-[11px] text-primary tracking-widest block uppercase mb-1">Installation &amp; Ecosystem</span>
+<h2 class="font-headline text-3xl text-parchment-glow font-normal">Choose Your Setup Method</h2>
+<p class="text-[14px] text-slate-300 max-w-2xl mx-auto mt-2">Engineered for instant adoption across agent coding harnesses, frontier web chats, and offline local runners:</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+<!-- Setup 1: Web Chat .zip -->
+<div class="bg-obsidian-elevated p-6 rounded-xl shadow-md border border-zinc-700/80 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-1.5 font-code text-[11px] text-primary uppercase">
+<span aria-hidden="true" class="material-symbols-outlined text-[18px]">folder_zip</span>
+<span>Method 1</span>
+</div>
+<span class="font-code text-[11px] text-secondary bg-surface-container-highest px-2 py-0.5 rounded">Zip Upload</span>
+</div>
+<h3 class="font-headline text-xl text-parchment-glow font-normal mb-1">Web Chat Full Zip</h3>
+<p class="text-[13px] text-slate-300 mb-4 leading-relaxed">Claude.ai, Gemini, &amp; ChatGPT Workspaces. Do not unzip: upload <code class="font-code text-[11px] text-primary">SatoriSkill-Full-v6.6.0.zip</code> directly.</p>
+</div>
+<a aria-label="Download SatoriSkill-Full-v6.6.0.zip release file" class="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg bg-primary-container text-parchment-glow text-[13px] font-medium hover:bg-celestial-indigo transition-colors focus:outline-none" href="https://github.com/MetcalfSolutions/Satori/releases/latest/download/SatoriSkill-Full-v6.6.0.zip">
+<span aria-hidden="true" class="material-symbols-outlined text-[18px]">download</span>
+<span>Download Release Zip</span>
+</a>
+</div>
+<!-- Setup 2: Terminal Agent CLI -->
+<div class="bg-obsidian-elevated p-6 rounded-xl shadow-md border border-zinc-700/80 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-1.5 font-code text-[11px] text-telemetry-emerald uppercase">
+<span aria-hidden="true" class="material-symbols-outlined text-[18px]">terminal</span>
+<span>Method 2</span>
+</div>
+<span class="font-code text-[11px] text-telemetry-emerald bg-surface-container-highest px-2 py-0.5 rounded">Terminal CLI</span>
+</div>
+<h3 class="font-headline text-xl text-parchment-glow font-normal mb-1">CLI / IDE Agents</h3>
+<p class="text-[13px] text-slate-300 mb-4 leading-relaxed">Claude Code, Antigravity, Cursor, Windsurf, OpenCode, Hermes, and Codex CLI.</p>
+</div>
+<div class="flex items-center justify-between gap-1.5 bg-surface-container-lowest px-3 py-2 rounded-lg border border-zinc-700/80">
+<code class="font-code text-[11px] text-parchment-glow truncate">npx skills add metcalfsolutions/satori</code>
+<button aria-label="Copy npx skills add metcalfsolutions/satori command to clipboard" class="font-code text-[11px] text-slate-300 hover:text-parchment-glow bg-surface-container-high px-2 py-1 rounded transition-colors cursor-pointer flex-shrink-0 focus:outline-none" onclick="copySnippet('npx skills add metcalfsolutions/satori', this, 'CLI install command copied to clipboard')">
+                Copy
+              </button>
+</div>
+</div>
+<!-- Setup 3: Source & SQLite Vault -->
+<div class="bg-obsidian-elevated p-6 rounded-xl shadow-md border border-zinc-700/80 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-1.5 font-code text-[11px] text-secondary uppercase">
+<span aria-hidden="true" class="material-symbols-outlined text-[18px]">database</span>
+<span>Method 3</span>
+</div>
+<span class="font-code text-[11px] text-secondary bg-surface-container-highest px-2 py-0.5 rounded">Local Vault</span>
+</div>
+<h3 class="font-headline text-xl text-parchment-glow font-normal mb-1">Source &amp; SQLite Vault</h3>
+<p class="text-[13px] text-slate-300 mb-4 leading-relaxed">Direct repository clone with Python standard-library SQLite memory vault and offline local test suites.</p>
+</div>
+<div class="flex items-center justify-between gap-1.5 bg-surface-container-lowest px-3 py-2 rounded-lg border border-zinc-700/80">
+<code class="font-code text-[11px] text-parchment-glow truncate">git clone https://github.com/MetcalfSolutions/Satori.git</code>
+<button aria-label="Copy git clone repository command to clipboard" class="font-code text-[11px] text-slate-300 hover:text-parchment-glow bg-surface-container-high px-2 py-1 rounded transition-colors cursor-pointer flex-shrink-0 focus:outline-none" onclick="copySnippet('git clone https://github.com/MetcalfSolutions/Satori.git', this, 'Git clone command copied to clipboard')">
+                Copy
+              </button>
+</div>
+</div>
+</div>
+<!-- Collapsible 16-Environment Details Matrix -->
+<details class="group bg-obsidian-elevated rounded-xl border border-zinc-700/80 overflow-hidden shadow-lg transition-all">
+<summary class="cursor-pointer flex items-center justify-between p-4 bg-surface-container-high/40 hover:bg-surface-container-high/80 transition-colors select-none focus:outline-none">
+<div class="flex items-center gap-2.5">
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-[20px]">layers</span>
+<span class="text-[14px] text-parchment-glow font-medium">View Complete 16-Environment Compatibility Matrix &amp; Support Tiers (Claude Code, Antigravity, Grok, Cursor, etc.)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-code text-[11px] text-slate-300 group-open:hidden">View 16 Environments</span>
+<span class="font-code text-[11px] text-primary hidden group-open:inline">Hide Table</span>
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-[20px] transition-transform duration-200 group-open:rotate-180">expand_more</span>
+</div>
+</summary>
+<div class="p-4 border-t border-zinc-700/80">
+<div class="overflow-x-auto rounded-lg bg-surface-container-lowest border border-zinc-700/80">
+<table class="w-full text-left text-[13px]">
+<thead class="bg-surface-container-high text-parchment-glow font-code text-[11px] uppercase tracking-wider">
+<tr>
+<th class="py-3 px-4">Category</th>
+<th class="py-3 px-4">Environment</th>
+<th class="py-3 px-4">Support Tier</th>
+<th class="py-3 px-4">Install Command / Method</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-zinc-700/80 text-on-surface">
+<tr class="bg-surface-container-low/40">
+<td class="py-3 px-4 font-medium text-parchment-glow align-top bg-surface-container-lowest/30" rowspan="5">
+                      Agent Harnesses<br/><span class="font-code text-[11px] text-slate-400">Mode 1: Local SQLite</span>
+</td>
+<td class="py-2.5 px-4 text-parchment-glow font-medium">Claude Code</td>
+<td class="py-2.5 px-4"><span class="font-code text-[11px] text-telemetry-emerald bg-surface-container-high px-2 py-0.5 rounded">Tier A · Verified</span></td>
+<td class="py-2.5 px-4 font-code text-[11px] text-slate-300">npx skills add metcalfsolutions/satori</td>
+</tr>
+<tr class="bg-surface-container-low/40">
+<td class="py-2.5 px-4 text-parchment-glow font-medium">Google Antigravity</td>
+<td class="py-2.5 px-4"><span class="font-code text-[11px] text-telemetry-emerald bg-surface-container-high px-2 py-0.5 rounded">Tier A · Verified</span></td>
+<td class="py-2.5 px-4 font-code text-[11px] text-slate-300">npx skills add metcalfsolutions/satori</td>
+</tr>
+<tr class="bg-surface-container-low/40">
+<td class="py-2.5 px-4 text-parchment-glow font-medium">Cursor / Windsurf</td>
+<td class="py-2.5 px-4"><span class="font-code text-[11px] text-telemetry-emerald bg-surface-container-high px-2 py-0.5 rounded">Tier A · Verified</span></td>
+<td class="py-2.5 px-4 font-code text-[11px] text-slate-300">npx skills add metcalfsolutions/satori</td>
+</tr>
+<tr class="bg-surface-container-low/40">
+<td class="py-2.5 px-4 text-parchment-glow font-medium">OpenCode / Hermes</td>
+<td class="py-2.5 px-4"><span class="font-code text-[11px] text-secondary bg-surface-container-high px-2 py-0.5 rounded">Tier B · Community</span></td>
+<td class="py-2.5 px-4 font-code text-[11px] text-slate-300">npx skills add metcalfsolutions/satori</td>
+</tr>
+<tr class="bg-surface-container-low/40">
+<td class="py-2.5 px-4 text-parchment-glow font-medium">xAI Grok Build</td>
+<td class="py-2.5 px-4"><span class="font-code text-[11px] text-secondary bg-surface-container-high px-2 py-0.5 rounded">Tier B · Community</span></td>
+<td class="py-2.5 px-4 font-code text-[11px] text-slate-300">/satori inside Grok Build session</td>
+</tr>
+<tr class="bg-surface-container-low/20">
+<td class="py-3 px-4 font-medium text-parchment-glow align-top bg-surface-container-lowest/30" rowspan="3">
+                      Web Chat Surfaces<br/><span class="font-code text-[11px] text-slate-400">Mode 2: Stateless Note</span>
+</td>
+<td class="py-2.5 px-4 text-parchment-glow font-medium">Claude.ai</td>
+<td class="py-2.5 px-4"><span class="font-code text-[11px] text-telemetry-emerald bg-surface-container-high px-2 py-0.5 rounded">Tier A · Verified</span></td>
+<td class="py-2.5 px-4 text-[12px] text-slate-300">Upload dist/SatoriSkill-Full-v6.6.0.zip in Skills or Projects</td>
+</tr>
+<tr class="bg-surface-container-low/20">
+<td class="py-2.5 px-4 text-parchment-glow font-medium">Google Gemini Web</td>
+<td class="py-2.5 px-4"><span class="font-code text-[11px] text-secondary bg-surface-container-high px-2 py-0.5 rounded">Tier B · Community</span></td>
+<td class="py-2.5 px-4 text-[12px] text-slate-300">Upload zip under Gemini Skills</td>
+</tr>
+<tr class="bg-surface-container-low/20">
+<td class="py-2.5 px-4 text-parchment-glow font-medium">ChatGPT / Custom GPT</td>
+<td class="py-2.5 px-4"><span class="font-code text-[11px] text-telemetry-emerald bg-surface-container-high px-2 py-0.5 rounded">Tier A · Verified</span></td>
+<td class="py-2.5 px-4 text-[12px] text-slate-300">Upload zip in Workspaces or paste compact/SKILL.md</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</details>
+</div>
+</section>
+<!-- =========================================================================
+         SAFETY, CRISIS DIRECTORY & 3-TIER RISK MODEL (Actionable Live Links)
+         ========================================================================= -->
+<section class="w-full px-4 md:px-8 py-16 bg-surface-container-lowest border-t border-zinc-700/80" id="safety-crisis">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
+<div>
+<span class="font-code text-[11px] text-rose-300 tracking-widest block uppercase mb-1">references/SAFETY.md</span>
+<h2 class="font-headline text-3xl text-parchment-glow font-normal">Verified Crisis Directory &amp; Safety Protocol</h2>
+<p class="text-[14px] text-slate-300 mt-1">
+<span lang="ja">Satori</span> is an inner contemplation instrument, not medical intervention. In acute danger, tools lock and immediate human deferral activates:
+            </p>
+</div>
+<div class="mt-4 md:mt-0 font-code text-[11px] text-slate-300 bg-surface-container-high px-3 py-1 rounded-md border border-zinc-700/80">
+            120-Day Staleness Verification Cadence
+          </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+<div class="bg-surface-container-low p-4 rounded-xl border border-zinc-700/80">
+<span class="font-code text-[11px] text-secondary block mb-1">TIER 0: DARK NIGHT</span>
+<div class="font-headline text-lg text-parchment-glow font-normal mb-1">3:00 AM Existential Spacing</div>
+<p class="text-[12px] text-slate-300 leading-relaxed">Non-suicidal despair. Quiet presence, zero unsolicited crisis hotlines, and zero forced psychological fixing.</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl border border-zinc-700/80">
+<span class="font-code text-[11px] text-secondary block mb-1">TIER 1: RISK CHECK-IN</span>
+<div class="font-headline text-lg text-parchment-glow font-normal mb-1">Gentle Inquiry</div>
+<p class="text-[12px] text-slate-300 leading-relaxed">Passive ideation or ambiguous despair. Asks one direct safety question, locks tools, offers verified care gently.</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl border border-rose-500/50">
+<span class="font-code text-[11px] text-rose-300 block mb-1">TIER 2: ACUTE CRISIS</span>
+<div class="font-headline text-lg text-parchment-glow font-normal mb-1">Complete Lockout</div>
+<p class="text-[12px] text-slate-300 leading-relaxed">Active intent, self-harm, or domestic danger. Halts exploration, locks all tools, emits verified helplines, stays present.</p>
+</div>
+</div>
+<div class="overflow-x-auto rounded-xl bg-obsidian-elevated shadow-lg border border-zinc-700/80">
+<table class="w-full text-left text-[13px]">
+<thead class="bg-surface-container-high text-parchment-glow font-code text-[11px] uppercase tracking-wider">
+<tr>
+<th class="py-3 px-4">Region</th>
+<th class="py-3 px-4">Emergency</th>
+<th class="py-3 px-4">24/7 Crisis Call Line</th>
+<th class="py-3 px-4">Crisis Text / Online Directory</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-zinc-700/80 text-on-surface">
+<tr class="bg-surface-container-low/40">
+<td class="py-3 px-4 font-medium text-parchment-glow">United States</td>
+<td class="py-3 px-4 font-code text-[12px]"><a class="text-rose-300 hover:text-white underline font-semibold focus:outline-none" href="tel:911">911</a></td>
+<td class="py-3 px-4 font-code text-[12px]"><a class="text-primary hover:text-white underline font-medium focus:outline-none" href="tel:988">988</a> <span class="text-slate-300">(Suicide &amp; Crisis Lifeline)</span></td>
+<td class="py-3 px-4 font-code text-[12px]"><a class="text-primary hover:text-white underline focus:outline-none" href="sms:741741?body=HOME">Text HOME to 741741</a> or <a class="text-primary hover:text-white underline focus:outline-none" href="sms:988">text 988</a></td>
+</tr>
+<tr class="bg-surface-container-low/20">
+<td class="py-3 px-4 font-medium text-parchment-glow">Canada</td>
+<td class="py-3 px-4 font-code text-[12px]"><a class="text-rose-300 hover:text-white underline font-semibold focus:outline-none" href="tel:911">911</a></td>
+<td class="py-3 px-4 font-code text-[12px]"><a class="text-primary hover:text-white underline font-medium focus:outline-none" href="tel:988">988</a> <span class="text-slate-300">(Suicide Crisis Helpline, bilingual)</span></td>
+<td class="py-3 px-4 font-code text-[12px]"><a class="text-primary hover:text-white underline focus:outline-none" href="sms:686868">Text CONNECT to 686868</a> or <a class="text-primary hover:text-white underline focus:outline-none" href="sms:988">text 988</a></td>
+</tr>
+<tr class="bg-surface-container-low/40">
+<td class="py-3 px-4 font-medium text-parchment-glow">United Kingdom</td>
+<td class="py-3 px-4 font-code text-[12px]"><a class="text-rose-300 hover:text-white underline font-semibold focus:outline-none" href="tel:999">999</a></td>
+<td class="py-3 px-4 font-code text-[12px]"><a class="text-primary hover:text-white underline font-medium focus:outline-none" href="tel:111">111</a> <span class="text-slate-300">(NHS Mental Health)</span> · <a class="text-primary hover:text-white underline font-medium focus:outline-none" href="tel:116123">116 123</a> <span class="text-slate-300">(Samaritans)</span></td>
+<td class="py-3 px-4 font-code text-[12px]"><a class="text-primary hover:text-white underline focus:outline-none" href="sms:85258?body=SHOUT">Text SHOUT to 85258</a></td>
+</tr>
+<tr class="bg-surface-container-low/20">
+<td class="py-3 px-4 font-medium text-parchment-glow">Australia</td>
+<td class="py-3 px-4 font-code text-[12px]"><a class="text-rose-300 hover:text-white underline font-semibold focus:outline-none" href="tel:000">000</a></td>
+<td class="py-3 px-4 font-code text-[12px]"><a class="text-primary hover:text-white underline font-medium focus:outline-none" href="tel:131114">13 11 14</a> <span class="text-slate-300">(Lifeline Australia)</span></td>
+<td class="py-3 px-4 font-code text-[12px]"><a class="text-primary hover:text-white underline focus:outline-none" href="sms:0477131114">Text 0477 13 11 14</a></td>
+</tr>
+<tr class="bg-surface-container-low/40">
+<td class="py-3 px-4 font-medium text-parchment-glow">European Union</td>
+<td class="py-3 px-4 font-code text-[12px]"><a class="text-rose-300 hover:text-white underline font-semibold focus:outline-none" href="tel:112">112</a></td>
+<td class="py-3 px-4 font-code text-[12px]"><a class="text-primary hover:text-white underline font-medium focus:outline-none" href="tel:116123">116 123</a> <span class="text-slate-300">(Emotional Support Helpline)</span></td>
+<td class="py-3 px-4 font-code text-[12px]">Universal Emergency: <a class="text-primary hover:text-white underline focus:outline-none" href="tel:112">112</a></td>
+</tr>
+<tr class="bg-surface-container-low/20">
+<td class="py-3 px-4 font-medium text-parchment-glow">Global Directories</td>
+<td class="py-3 px-4 text-slate-300 font-code text-[11px]">Local</td>
+<td class="py-3 px-4"><a class="text-primary hover:underline font-code text-[12px] focus:outline-none" href="https://findahelpline.com/" rel="noopener noreferrer" target="_blank">findahelpline.com (24/7 International)</a></td>
+<td class="py-3 px-4"><a class="text-primary hover:underline font-code text-[12px] focus:outline-none" href="https://www.iasp.info/resources/Crisis_Centres/" rel="noopener noreferrer" target="_blank">IASP International Crisis Directory</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+         EXTENSIVE SEO KNOWLEDGE BASE & FAQ HUBS
+         ========================================================================= -->
+<section class="w-full px-4 md:px-8 py-16 bg-surface" id="seo-faq-hub">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-10">
+<span class="font-code text-[11px] text-primary tracking-widest block uppercase mb-1">Philosophy &amp; Clinical Knowledge Base</span>
+<h2 class="font-headline text-3xl md:text-4xl text-parchment-glow font-normal">Frequently Asked Questions &amp; Inquiry Hub</h2>
+<p class="text-[14px] text-slate-300 max-w-2xl mx-auto mt-2 leading-relaxed">
+            In-depth perspectives on how <span lang="ja">Satori</span> integrates ancient wisdom traditions, evidence-based clinical psychology frameworks, and zero-telemetry local privacy.
+          </p>
+</div>
+<!-- CATEGORY 1: Wisdom Traditions & Contemplative Philosophy -->
+<div class="mb-10">
+<div class="flex items-center gap-2 mb-4 pb-2 border-b border-zinc-700/80">
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-[20px]">self_improvement</span>
+<h3 class="font-headline text-xl text-parchment-glow font-normal">Wisdom Traditions &amp; Contemplative Philosophy</h3>
+</div>
+<div class="space-y-3">
+<!-- FAQ 1: Stoicism -->
+<details class="group bg-obsidian-elevated rounded-xl border border-zinc-700/80 overflow-hidden shadow-sm transition-all">
+<summary class="cursor-pointer flex items-center justify-between p-4 bg-surface-container-high/30 hover:bg-surface-container-high/60 transition-colors select-none focus:outline-none">
+<span class="text-[15px] font-headline text-parchment-glow font-normal pr-4">How does <span lang="ja">Satori</span> draw upon Stoicism (Epictetus &amp; Marcus Aurelius) for anxiety and the dichotomy of control?</span>
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-[20px] transition-transform duration-200 group-open:rotate-180 flex-shrink-0">expand_more</span>
+</summary>
+<div class="p-4 text-[14px] text-slate-300 leading-relaxed border-t border-zinc-700/80">
+<span lang="ja">Satori</span> applies Stoic philosophy not as cold emotional repression, but through Epictetus's rigorous <strong class="text-parchment-glow">dichotomy of control</strong> and Marcus Aurelius's meditative reframing. When acute anxiety or burnout arrives, <span lang="ja">Satori</span> helps you untangle what is genuinely in your sphere of agency (your assent, impulses, and actions) from what is outside it (other people's judgments, company restructurings, production bugs). Crucially, <span lang="ja">Satori</span> balances Stoic <span lang="grc">ataraxia</span> (inner stillness) and <span lang="la">amor fati</span> (loving one's fate) with warmth so that philosophical discipline never turns into toxic avoidance.
+              </div>
+</details>
+<!-- FAQ 2: Taoism & Zen -->
+<details class="group bg-obsidian-elevated rounded-xl border border-zinc-700/80 overflow-hidden shadow-sm transition-all">
+<summary class="cursor-pointer flex items-center justify-between p-4 bg-surface-container-high/30 hover:bg-surface-container-high/60 transition-colors select-none focus:outline-none">
+<span class="text-[15px] font-headline text-parchment-glow font-normal pr-4">How does <span lang="zh">Wu wei</span> (non-forcing) and <span lang="ja">Zen</span> non-attachment work in <span lang="ja">Satori</span>'s reflective inquiry?</span>
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-[20px] transition-transform duration-200 group-open:rotate-180 flex-shrink-0">expand_more</span>
+</summary>
+<div class="p-4 text-[14px] text-slate-300 leading-relaxed border-t border-zinc-700/80">
+                Modern productivity culture often treats psychological friction as a bug to be attacked with brute willpower. <span lang="ja">Satori</span> introduces <strong class="text-parchment-glow" lang="zh">Wu wei (無為)</strong> from the Laozi and Zhuangzi—the art of aligned, non-coercive action—combined with <span lang="ja">Zen</span> non-attachment (<em class="text-parchment-glow" lang="pi">anicca</em>) and the open presence of the <span lang="ja">ensō</span> circle. <span lang="ja">Satori</span> illuminates where you may be clutching an imagined ideal outcome or trying to force an answer before the situation has ripened, inviting you to release white-knuckling and act in accordance with current reality.
+              </div>
+</details>
+<!-- FAQ 3: Eastern & Advaita -->
+<details class="group bg-obsidian-elevated rounded-xl border border-zinc-700/80 overflow-hidden shadow-sm transition-all">
+<summary class="cursor-pointer flex items-center justify-between p-4 bg-surface-container-high/30 hover:bg-surface-container-high/60 transition-colors select-none focus:outline-none">
+<span class="text-[15px] font-headline text-parchment-glow font-normal pr-4">What role do <span lang="sa">Advaita Vedanta</span>, Hindu philosophy, and witness consciousness play?</span>
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-[20px] transition-transform duration-200 group-open:rotate-180 flex-shrink-0">expand_more</span>
+</summary>
+<div class="p-4 text-[14px] text-slate-300 leading-relaxed border-t border-zinc-700/80">
+<span lang="sa">Advaita Vedanta</span> and classical Indian philosophy offer the concept of <strong class="text-parchment-glow" lang="sa">Sakshi (the witness consciousness)</strong>. In <span lang="ja">Satori</span>'s inquiries, this lens helps you step back from fused identification with passing mental weather. You are not your intrusive panic, your fear of failure, or your obsessive thoughts; you are the silent, undisturbed space in which those thoughts arise and pass away.
+              </div>
+</details>
+<!-- FAQ 4: African & Indigenous -->
+<details class="group bg-obsidian-elevated rounded-xl border border-zinc-700/80 overflow-hidden shadow-sm transition-all">
+<summary class="cursor-pointer flex items-center justify-between p-4 bg-surface-container-high/30 hover:bg-surface-container-high/60 transition-colors select-none focus:outline-none">
+<span class="text-[15px] font-headline text-parchment-glow font-normal pr-4">How does <span lang="ja">Satori</span> integrate <span lang="zu">Ubuntu</span> ('I am because we are'), Akan <span lang="ak">Sankofa</span>, and Kemetic <span lang="egy">Ma'at</span>?</span>
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-[20px] transition-transform duration-200 group-open:rotate-180 flex-shrink-0">expand_more</span>
+</summary>
+<div class="p-4 text-[14px] text-slate-300 leading-relaxed border-t border-zinc-700/80">
+                Western self-help often treats isolation as individual pathology. <span lang="ja">Satori</span> draws on <strong class="text-parchment-glow">Southern African <span lang="zu">Ubuntu</span> philosophy</strong> (Mogobe Ramose, Desmond Tutu) to heal the illusion of atomized selfhood, reminding you that your identity is relationally held. Akan ethics (<strong class="text-parchment-glow" lang="ak">Sankofa</strong>) guide you to retrieve forgotten wisdom from your past to move forward, while ancient Kemetic <strong class="text-parchment-glow" lang="egy">Ma'at</strong> anchors truth, cosmic balance, and communal reciprocity.
+              </div>
+</details>
+<!-- FAQ 5: Sufi Contemplation -->
+<details class="group bg-obsidian-elevated rounded-xl border border-zinc-700/80 overflow-hidden shadow-sm transition-all">
+<summary class="cursor-pointer flex items-center justify-between p-4 bg-surface-container-high/30 hover:bg-surface-container-high/60 transition-colors select-none focus:outline-none">
+<span class="text-[15px] font-headline text-parchment-glow font-normal pr-4">How does <span lang="ja">Satori</span> honor grief and longing through Sufi poetic contemplation (<span lang="fa">Rumi</span>, <span lang="fa">Attar</span>)?</span>
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-[20px] transition-transform duration-200 group-open:rotate-180 flex-shrink-0">expand_more</span>
+</summary>
+<div class="p-4 text-[14px] text-slate-300 leading-relaxed border-t border-zinc-700/80">
+                Rather than treating grief or longing as a symptom to be medicated away, <span lang="ja">Satori</span> draws on classical Sufi contemplation—including <span lang="fa">Jalāl ad-Dīn Rūmī</span>'s <em>Masnavi</em> and <span lang="fa">Farid ud-Din Attar</span>'s <em>The Conference of the Birds</em>. Through concepts like the <strong class="text-parchment-glow" lang="ar">Qalb</strong> (the heart as the organ of deep perception), <strong class="text-parchment-glow" lang="ar">Ishq</strong> (longing as proof of connection), <strong class="text-parchment-glow" lang="ar">Fana &amp; Baqa</strong> (dissolution of the defended ego and return to life transformed), and <strong class="text-parchment-glow" lang="ar">Tawakkul</strong> (acting with full agency while releasing possessiveness over the outcome), <span lang="ja">Satori</span> honors grief as a furnace of transformation rather than a problem to rush past.
+              </div>
+</details>
+</div>
+</div>
+<!-- CATEGORY 2: Clinical Psychology, Therapy & Mental Health Boundaries -->
+<div class="mb-10">
+<div class="flex items-center gap-2 mb-4 pb-2 border-b border-zinc-700/80">
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-[20px]">psychology</span>
+<h3 class="font-headline text-xl text-parchment-glow font-normal">Evidence-Based Psychology, Therapy &amp; Mental Health</h3>
+</div>
+<div class="space-y-3">
+<!-- FAQ 6: Does Satori replace therapy? -->
+<details class="group bg-obsidian-elevated rounded-xl border border-zinc-700/80 overflow-hidden shadow-sm transition-all">
+<summary class="cursor-pointer flex items-center justify-between p-4 bg-surface-container-high/30 hover:bg-surface-container-high/60 transition-colors select-none focus:outline-none">
+<span class="text-[15px] font-headline text-parchment-glow font-normal pr-4">Does <span lang="ja">Satori</span> replace therapy, counseling, or psychiatric treatment?</span>
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-[20px] transition-transform duration-200 group-open:rotate-180 flex-shrink-0">expand_more</span>
+</summary>
+<div class="p-4 text-[14px] text-slate-300 leading-relaxed border-t border-zinc-700/80">
+<strong class="text-parchment-glow">No. <span lang="ja">Satori</span> works alongside therapy, not as a replacement for it.</strong> <span lang="ja">Satori</span> is not a licensed clinician, does not formulate DSM psychiatric diagnoses, and does not prescribe medications. It is engineered for the "grey zone"—clarifying thoughts, somatic reactions, and recurring relational patterns between clinical sessions. If acute danger or self-harm appears, <span lang="ja">Satori</span> immediately halts tool operations and connects you with verified human lifelines.
+              </div>
+</details>
+<!-- FAQ 7: Internal Family Systems (IFS) -->
+<details class="group bg-obsidian-elevated rounded-xl border border-zinc-700/80 overflow-hidden shadow-sm transition-all">
+<summary class="cursor-pointer flex items-center justify-between p-4 bg-surface-container-high/30 hover:bg-surface-container-high/60 transition-colors select-none focus:outline-none">
+<span class="text-[15px] font-headline text-parchment-glow font-normal pr-4">How does <span lang="ja">Satori</span> use Internal Family Systems (IFS) to soothe the inner critic and unblend parts?</span>
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-[20px] transition-transform duration-200 group-open:rotate-180 flex-shrink-0">expand_more</span>
+</summary>
+<div class="p-4 text-[14px] text-slate-300 leading-relaxed border-t border-zinc-700/80">
+                Drawing on Richard Schwartz's <strong class="text-parchment-glow">Internal Family Systems (IFS)</strong> model, <span lang="ja">Satori</span> does not fight your harsh self-criticism or treat it as an enemy. Instead, it helps you recognize that critical voices are protective "Manager parts" attempting to shield vulnerable "Exiles" from shame or failure. By asking gentle questions that help you "unblend," <span lang="ja">Satori</span> creates space for you to lead from your calm, compassionate Self.
+              </div>
+</details>
+<!-- FAQ 8: ACT & DBT -->
+<details class="group bg-obsidian-elevated rounded-xl border border-zinc-700/80 overflow-hidden shadow-sm transition-all">
+<summary class="cursor-pointer flex items-center justify-between p-4 bg-surface-container-high/30 hover:bg-surface-container-high/60 transition-colors select-none focus:outline-none">
+<span class="text-[15px] font-headline text-parchment-glow font-normal pr-4">How does <span lang="ja">Satori</span> use ACT (cognitive defusion) and DBT (holding dialectical tensions)?</span>
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-[20px] transition-transform duration-200 group-open:rotate-180 flex-shrink-0">expand_more</span>
+</summary>
+<div class="p-4 text-[14px] text-slate-300 leading-relaxed border-t border-zinc-700/80">
+                From <strong class="text-parchment-glow">Acceptance and Commitment Therapy (ACT)</strong>, <span lang="ja">Satori</span> applies cognitive defusion: treating harsh thoughts as mere language events rather than absolute reality. From Marsha Linehan's <strong class="text-parchment-glow">Dialectical Behavior Therapy (DBT)</strong>, <span lang="ja">Satori</span> holds radical acceptance of what is alongside a firm commitment to change, helping you hold both truths without collapsing into polarization.
+              </div>
+</details>
+<!-- FAQ 9: Developer Burnout & Imposter Syndrome -->
+<details class="group bg-obsidian-elevated rounded-xl border border-zinc-700/80 overflow-hidden shadow-sm transition-all">
+<summary class="cursor-pointer flex items-center justify-between p-4 bg-surface-container-high/30 hover:bg-surface-container-high/60 transition-colors select-none focus:outline-none">
+<span class="text-[15px] font-headline text-parchment-glow font-normal pr-4">Can <span lang="ja">Satori</span> help with developer burnout, imposter syndrome, and chronic over-functioning?</span>
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-[20px] transition-transform duration-200 group-open:rotate-180 flex-shrink-0">expand_more</span>
+</summary>
+<div class="p-4 text-[14px] text-slate-300 leading-relaxed border-t border-zinc-700/80">
+                Yes. <span lang="ja">Satori</span>'s Precedence Rank 5 protocol detects when technical code tasks contain underlying panic, imposter syndrome, or fatigue. It solves the technical code task completely first (e.g. fixing race conditions, concurrency bugs, SQL migrations), then appends two quiet grounding sentences that address the human behind the keyboard without lecturing or hijacking your terminal.
+              </div>
+</details>
+<!-- FAQ 10: Anti-Advice vs Self Help -->
+<details class="group bg-obsidian-elevated rounded-xl border border-zinc-700/80 overflow-hidden shadow-sm transition-all">
+<summary class="cursor-pointer flex items-center justify-between p-4 bg-surface-container-high/30 hover:bg-surface-container-high/60 transition-colors select-none focus:outline-none">
+<span class="text-[15px] font-headline text-parchment-glow font-normal pr-4">Why is <span lang="ja">Satori</span>'s 'Anti-Advice' and 'Anti-Guru' architecture different from generic self-help apps?</span>
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-[20px] transition-transform duration-200 group-open:rotate-180 flex-shrink-0">expand_more</span>
+</summary>
+<div class="p-4 text-[14px] text-slate-300 leading-relaxed border-t border-zinc-700/80">
+                Most self-help apps and conversational bots posture as all-knowing gurus, handing out 7-point self-care homework checklists and cultivating artificial attachment. <span lang="ja">Satori</span> enforces the <strong class="text-parchment-glow">Anti-Guru Principle (Immovable #1)</strong>: it is built to be outgrown. Success means you need <span lang="ja">Satori</span> less over time, not more. It offers at most one lens per turn and exactly one open question, handing agency back to you.
+              </div>
+</details>
+<!-- FAQ 11: Privacy & SQLite -->
+<details class="group bg-obsidian-elevated rounded-xl border border-zinc-700/80 overflow-hidden shadow-sm transition-all">
+<summary class="cursor-pointer flex items-center justify-between p-4 bg-surface-container-high/30 hover:bg-surface-container-high/60 transition-colors select-none focus:outline-none">
+<span class="text-[15px] font-headline text-parchment-glow font-normal pr-4">How does <span lang="ja">Satori</span> protect data privacy compared to corporate cloud chatbots?</span>
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-[20px] transition-transform duration-200 group-open:rotate-180 flex-shrink-0">expand_more</span>
+</summary>
+<div class="p-4 text-[14px] text-slate-300 leading-relaxed border-t border-zinc-700/80">
+                In CLI and IDE harnesses, <span lang="ja">Satori</span> uses a 100% local-first SQLite vault located at <code class="font-code text-[11px] text-primary">~/.satori/memory/</code> with strict POSIX 0700/0600 permissions. It makes zero network calls, collects zero telemetry, and stores only structural thematic summaries (≤500 chars)—never raw transcripts. In stateless web chat workspaces, <span lang="ja">Satori</span> stores nothing on disk, giving you complete sovereignty over your inner life.
+              </div>
+</details>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+         CALL TO ACTION / FOOTER
+         ========================================================================= -->
+<footer class="w-full px-4 md:px-8 py-16 bg-surface-container-lowest border-t border-zinc-700/80 text-center">
+<div class="max-w-4xl mx-auto">
+<h2 class="font-headline text-3xl md:text-4xl text-parchment-glow font-normal mb-3">
+          Ready to bring clarity to your thinking?
+        </h2>
+<p class="text-slate-300 text-[14px] mb-8 max-w-xl mx-auto">Install <span lang="ja">Satori</span> in under 30 seconds. Works across your terminal, IDE, and frontier web chat platforms. Free forever under Apache 2.0.</p>
+<div class="inline-flex flex-wrap items-center justify-center gap-3 mb-10">
+<a aria-label="Download Satori Skill zip package" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-primary-container text-parchment-glow text-[14px] font-medium shadow-[0_0_25px_rgba(81,56,229,0.4)] hover:shadow-[0_0_35px_rgba(81,56,229,0.65)] transition-all focus:outline-none" href="https://github.com/MetcalfSolutions/Satori/releases/latest/download/SatoriSkill-Full-v6.6.0.zip">
+<span aria-hidden="true" class="material-symbols-outlined text-[18px]">download</span>
+<span>Download <span lang="ja">Satori</span> Skill (.zip)</span>
+</a>
+<a aria-label="119 stars on GitHub repository" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-surface-container-high text-parchment-glow hover:bg-surface-container-highest transition-colors text-[14px] border border-zinc-700/80 focus:outline-none" data-gh-star-btn="" href="https://github.com/MetcalfSolutions/Satori" rel="noopener noreferrer" target="_blank">
+<span aria-hidden="true" class="material-symbols-outlined text-[18px] text-secondary">star</span>
+<span>Star on GitHub · <span data-gh-star-count="">119 ★</span></span>
+</a>
+</div>
+<div class="text-[12px] text-slate-300 font-code max-w-2xl mx-auto space-y-2">
+<p><span lang="ja">Satori</span>: Japanese (<span lang="ja">悟り</span>). The experience of sudden clarity. Understanding that arrives whole.</p>
+<p>Built by Matthew Metcalf · <a class="text-primary hover:text-parchment-glow underline underline-offset-4 transition-colors" href="/">Metcalf Solutions</a> · Free and open source under Apache 2.0</p>
+</div>
+</div>
+</footer>
+</main>
+<script>
+    let toastTimeout = null;
+    let liveRegionTimeout = null;
+
+    function copySnippet(text, buttonElement, announcementText) {
+      navigator.clipboard.writeText(text).then(function() {
+        // 1. Button label state
+        const originalText = buttonElement.innerText;
+        buttonElement.innerText = 'Copied!';
+        buttonElement.classList.add('text-telemetry-emerald');
+        setTimeout(() => {
+          buttonElement.innerText = originalText;
+          buttonElement.classList.remove('text-telemetry-emerald');
+        }, 2200);
+
+        // 2. WCAG assertive live region announcement
+        const liveRegion = document.getElementById('copy-live-region');
+        if (liveRegion) {
+          const announce = announcementText || 'Install command copied to clipboard';
+          liveRegion.textContent = announce;
+          clearTimeout(liveRegionTimeout);
+          liveRegionTimeout = setTimeout(() => {
+            liveRegion.textContent = '';
+          }, 3500);
+        }
+
+        // 3. Visual Toast Notification
+        const toast = document.getElementById('toast-notification');
+        const toastLabel = document.getElementById('toast-text');
+        if (toast && toastLabel) {
+          toastLabel.textContent = announcementText || 'Command copied to clipboard!';
+          toast.classList.remove('translate-y-24', 'opacity-0');
+          toast.classList.add('translate-y-0', 'opacity-100');
+
+          clearTimeout(toastTimeout);
+          toastTimeout = setTimeout(() => {
+            toast.classList.remove('translate-y-0', 'opacity-100');
+            toast.classList.add('translate-y-24', 'opacity-0');
+          }, 3000);
+        }
+      }).catch(function(err) {
+        console.error('Clipboard copy failed:', err);
+      });
+    }
+
+    function selectTurn(num) {
+      for (let i = 1; i <= 3; i++) {
+        const box = document.getElementById('turn-box-' + i);
+        const btn = document.getElementById('turn-btn-' + i);
+        if (i === num) {
+          box.classList.remove('hidden');
+          btn.classList.add('bg-surface-container-high', 'text-parchment-glow', 'shadow-sm');
+          btn.classList.remove('text-slate-300');
+          btn.setAttribute('aria-selected', 'true');
+          btn.setAttribute('tabindex', '0');
+          btn.focus();
+        } else {
+          box.classList.add('hidden');
+          btn.classList.remove('bg-surface-container-high', 'text-parchment-glow', 'shadow-sm');
+          btn.classList.add('text-slate-300');
+          btn.setAttribute('aria-selected', 'false');
+          btn.setAttribute('tabindex', '-1');
+        }
+      }
+    }
+
+    // ARIA Tablist Keyboard Navigation (ArrowLeft / ArrowRight / Home / End)
+    (function initTurnTabsKeyboard() {
+      const tabs = [1, 2, 3].map(n => document.getElementById('turn-btn-' + n)).filter(Boolean);
+      tabs.forEach((tab, idx) => {
+        tab.addEventListener('keydown', (e) => {
+          let nextIdx = null;
+          if (e.key === 'ArrowRight') nextIdx = (idx + 1) % tabs.length;
+          else if (e.key === 'ArrowLeft') nextIdx = (idx - 1 + tabs.length) % tabs.length;
+          else if (e.key === 'Home') nextIdx = 0;
+          else if (e.key === 'End') nextIdx = tabs.length - 1;
+          if (nextIdx !== null) {
+            e.preventDefault();
+            selectTurn(nextIdx + 1);
+          }
+        });
+      });
+    })();
+
+    // Realtime GitHub Star Counter (load + 60s visible-tab refresh + localStorage fallback)
+    (function initGitHubStars() {
+      const REPO_API = 'https://api.github.com/repos/MetcalfSolutions/Satori';
+      const STORAGE_KEY = 'satori_gh_stars_v1';
+      const REFRESH_MS = 60000;
+
+      function formatStars(count) {
+        if (count >= 1000) {
+          const compact = (count / 1000).toFixed(1).replace(/\.0$/, '');
+          return compact + 'k ★';
+        }
+        return count.toLocaleString('en-US') + ' ★';
+      }
+
+      function renderStars(count) {
+        if (typeof count !== 'number' || !Number.isFinite(count) || count < 0) return;
+        const formatted = formatStars(count);
+        document.querySelectorAll('[data-gh-star-count]').forEach((el) => {
+          el.textContent = formatted;
+        });
+        document.querySelectorAll('[data-gh-star-btn]').forEach((btn) => {
+          btn.setAttribute('aria-label', count.toLocaleString('en-US') + ' stars on GitHub repository');
+        });
+      }
+
+      try {
+        const cached = localStorage.getItem(STORAGE_KEY);
+        if (cached) {
+          const parsed = JSON.parse(cached);
+          if (parsed && typeof parsed.count === 'number') {
+            renderStars(parsed.count);
+          }
+        }
+      } catch (_) {
+        // Ignore storage access errors in restricted contexts
+      }
+
+      async function fetchStars() {
+        try {
+          const res = await fetch(REPO_API, {
+            headers: { 'Accept': 'application/vnd.github+json' },
+            cache: 'no-store'
+          });
+          if (!res.ok) return;
+          const data = await res.json();
+          if (typeof data.stargazers_count === 'number') {
+            renderStars(data.stargazers_count);
+            try {
+              localStorage.setItem(STORAGE_KEY, JSON.stringify({
+                count: data.stargazers_count,
+                updatedAt: Date.now()
+              }));
+            } catch (_) {}
+          }
+        } catch (_) {
+          // Keep cached/default count on network error or rate limit
+        }
+      }
+
+      fetchStars();
+      setInterval(() => {
+        if (document.visibilityState === 'visible') {
+          fetchStars();
+        }
+      }, REFRESH_MS);
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') {
+          fetchStars();
+        }
+      });
+    })();
+  </script>
+</body></html>
