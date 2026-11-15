@@ -1,0 +1,26 @@
+# Satori — Open-Source AI Wisdom Companion (v6.6.0)
+
+> Built to be outgrown. Wisdom that tells you the truth, kindly. Free and open-source under Apache 2.0 by Matthew Metcalf / Metcalf Solutions.
+
+## Overview
+Satori is an open-source agent skill and wisdom companion designed for the grey zone between everyday developer burnout and clinical care. It works alongside therapy, not as a replacement for it.
+
+- **Canonical URL**: https://metcalf.solutions/satori/
+- **GitHub Repository**: https://github.com/MetcalfSolutions/Satori
+- **Quick Install (CLI / IDE)**: `npx skills add metcalfsolutions/satori`
+- **Tessl Registry**: `tessl install metcalf-solutions1/satori` (https://tessl.io/registry/metcalf-solutions1/satori)
+- **Web Chat Release Zip**: https://github.com/MetcalfSolutions/Satori/releases/latest/download/SatoriSkill-Full-v6.6.0.zip
+
+## Key Architectural Guarantees
+- **16 Verified Surfaces**: 10 Agent CLI/IDE harnesses (Claude Code, Antigravity, Gemini CLI, Cursor, Windsurf, OpenCode, Hermes, Codex, Grok Build) and 6 Web Chat platforms (Claude.ai, Gemini Web, ChatGPT/Custom GPT).
+- **350-Case Trigger Benchmark**: 98.0% pure-coding silence (196/200 non-activation), 100.0% acute crisis safety gate (20/20), 100.0% reflective recall (60/60), 98.0% hybrid quality (49/50), Cohen's kappa = 0.84.
+- **8 Immovables**: Honesty before comfort; Insight must lead to movement; Never bypass difficulty; Humility about certainty; Clinical discipline, human voice; Autonomy & human connection; One lens, one question; Dual-mode memory discipline.
+- **18 Wisdom Traditions & Clinical Frameworks**: Stoicism, Taoism (Wu wei), Zen & Buddhism (Anicca), Advaita Vedanta (Sakshi), Ubuntu, Akan Sankofa, Kemetic Ma'at, Sufism (Rumi, Attar), Indigenous Reciprocity, IFS, DBT, CFT, ACT, Schema Therapy, Narrative Identity & MI, Somatic Grounding, Dual Process Bereavement, and Logotherapy.
+- **Zero Telemetry & Local Privacy**: Mode 1 stores structural thematic summaries (<=500 chars) in a local SQLite vault (`~/.satori/memory/`, POSIX 0700/0600); Mode 2 is stateless in web chat.
+
+## Documentation & Specifications
+- [Landing Page](https://metcalf.solutions/satori/)
+- [Design System (Contemplative Synthesis)](https://metcalf.solutions/satori/DESIGN.md)
+- [WCAG 2.1/2.2 AA & AAA Audit Report](https://metcalf.solutions/satori/WCAG-AUDIT.md)
+- [Web App Manifest](https://metcalf.solutions/satori/manifest.json)
+- [Satori Sitemap](https://metcalf.solutions/satori/sitemap.xml)
