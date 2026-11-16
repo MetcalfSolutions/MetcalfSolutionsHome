@@ -1,0 +1,110 @@
+{
+ "note": "Credits for the photographs in this folder: photos.mjs credits prints the footer block for the ones the pages use.",
+ "photos": [
+  {
+   "file": "photo-d183.webp",
+   "files": [
+    "photo-d183-500.webp",
+    "photo-d183-960.webp",
+    "photo-d183.webp"
+   ],
+   "id": "d183",
+   "alt": "Open blank notebook with a ribbon marker and a pencil lying across the pages on a dark wooden table",
+   "by": "Jan Kahánek",
+   "licence": "CC0",
+   "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "page": "https://commons.wikimedia.org/wiki/File:Tabel_day_1_(Unsplash).jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-c877.webp",
+   "files": [
+    "photo-c877-500.webp",
+    "photo-c877-960.webp",
+    "photo-c877.webp"
+   ],
+   "id": "c877",
+   "alt": "Close-up of soft-focus stacked books showing page edges and covers with no readable spines",
+   "by": "Nenad Stojkovic",
+   "licence": "CC BY 2.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by/2.0/",
+   "page": "https://commons.wikimedia.org/wiki/File:Close-up_of_stacked_books._(51539890528).jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-d184.webp",
+   "files": [
+    "photo-d184-500.webp",
+    "photo-d184-960.webp",
+    "photo-d184.webp"
+   ],
+   "id": "d184",
+   "alt": "Macro of a grey wire spiral binding running through a squared-paper notebook",
+   "by": "Dietmar Rabich",
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "page": "https://commons.wikimedia.org/wiki/File:Spiralbinder%C3%BCcken_--_2022_--_9722.jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-d88.webp",
+   "files": [
+    "photo-d88-500.webp",
+    "photo-d88-960.webp",
+    "photo-d88.webp"
+   ],
+   "id": "d88",
+   "alt": "Cream ceramic table lamp on a glossy side table, low sun throwing long shadows across a white wall",
+   "by": "LoMit",
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "page": "https://commons.wikimedia.org/wiki/File:Lamp_with_a_lampshade_illuminated_by_sunlight.jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-c823.webp",
+   "files": [
+    "photo-c823-500.webp",
+    "photo-c823-960.webp",
+    "photo-c823.webp"
+   ],
+   "id": "c823",
+   "alt": "Overlapping sheets of pale grey-green card scattered at angles, seen from above, with soft shadows along their edges",
+   "by": "Brandi Redd",
+   "licence": "CC0",
+   "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "page": "https://commons.wikimedia.org/wiki/File:Scattered_white_paper_(Unsplash).jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-c734.webp",
+   "files": [
+    "photo-c734-500.webp",
+    "photo-c734-960.webp",
+    "photo-c734.webp"
+   ],
+   "id": "c734",
+   "alt": "Torch-lit round tunnel seen end-on, teal rings of light receding to a small headlamp in the dark",
+   "by": "darkday from Brisbane, Australia",
+   "licence": "CC BY 2.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by/2.0/",
+   "page": "https://commons.wikimedia.org/wiki/File:Dark_Light_(16233813885).jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-c826.webp",
+   "files": [
+    "photo-c826-500.webp",
+    "photo-c826-960.webp",
+    "photo-c826.webp"
+   ],
+   "id": "c826",
+   "alt": "Curved sheets of paper glowing teal and mint, rising out of black darkness",
+   "by": "Dietmar Rabich",
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "page": "https://commons.wikimedia.org/wiki/File:Papierkanten_--_2020_--_9535.jpg",
+   "source": "Wikimedia Commons"
+  }
+ ]
+}

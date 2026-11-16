@@ -2,12 +2,12 @@
   "name": "Satori — Open-Source AI Wisdom Companion",
   "short_name": "Satori",
   "description": "A psychologically grounded wisdom companion for inner life. 18 philosophical & contemplative traditions, 6-step reflective model, 8 immovables, and local SQLite memory vault.",
-  "start_url": "/satori/",
+  "start_url": "./",
   "display": "standalone",
-  "background_color": "#0d0d15",
-  "theme_color": "#13131a",
+  "background_color": "#161c1a",
+  "theme_color": "#161c1a",
   "orientation": "portrait-primary",
-  "scope": "/satori/",
+  "scope": "./",
   "lang": "en",
   "categories": [
     "lifestyle",
@@ -17,19 +17,19 @@
   ],
   "icons": [
     {
-      "src": "/satori/icons/icon-192.png",
+      "src": "icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/satori/icons/icon-512.png",
+      "src": "icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/satori/icons/apple-touch-icon.png",
+      "src": "icons/apple-touch-icon.png",
       "sizes": "180x180",
       "type": "image/png"
     }
@@ -39,22 +39,22 @@
       "name": "Quick Install",
       "short_name": "Install",
       "description": "Install across 16 CLI, IDE, and Web environments",
-      "url": "/satori/#install-matrix",
-      "icons": [{ "src": "/satori/icons/icon-192.png", "sizes": "192x192" }]
+      "url": "./#install",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
     },
     {
       "name": "Crisis Directory",
       "short_name": "Crisis Support",
       "description": "24/7 Verified primary-source emergency helplines",
-      "url": "/satori/#safety-crisis",
-      "icons": [{ "src": "/satori/icons/icon-192.png", "sizes": "192x192" }]
+      "url": "./#safety-crisis",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
     },
     {
-      "name": "Choose Your Surface",
-      "short_name": "Surfaces",
-      "description": "Pick how you run Satori across CLI, IDE, or Web Chat",
-      "url": "/satori/#why-satori",
-      "icons": [{ "src": "/satori/icons/icon-192.png", "sizes": "192x192" }]
+      "name": "Five People Satori Was Built For",
+      "short_name": "Personas",
+      "description": "See who Satori helps across web chat and CLI",
+      "url": "./#for-you",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
     }
   ]
 }

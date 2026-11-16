@@ -4,7 +4,7 @@
 
 ## Primary Pages
 - [Home & Portfolio](https://metcalf.solutions/): Digital strategy, campaign architecture, Cloudflare/managed hosting, and AI workflow automation.
-- [Satori — Open-Source AI Wisdom Companion](https://metcalf.solutions/satori/): Flagship open-source AI agent skill (Apache 2.0) combining 18 contemplative and psychological traditions with clinical discipline and a 100% local SQLite memory vault.
+- [Satori — Free, Open-Source AI Wisdom Companion](https://metcalf.solutions/satori/): Flagship open-source AI wisdom companion (v6.6.0, Apache 2.0) helping people think more clearly through difficult decisions, recurring patterns, and quiet burnout — combining 18 contemplative and psychological traditions across Claude.ai, ChatGPT, Gemini, and 10 CLI/IDE coding harnesses with a 100% local SQLite memory vault (`~/.satori/memory/`).
 
 ## Machine-Readable Discovery
 - [Root Sitemap](https://metcalf.solutions/sitemap.xml)

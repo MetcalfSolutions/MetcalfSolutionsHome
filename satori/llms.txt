@@ -1,26 +1,32 @@
-# Satori — Open-Source AI Wisdom Companion (v6.6.0)
+# Satori — Free, Open-Source AI Wisdom Companion (v6.6.0)
 
 > Built to be outgrown. Wisdom that tells you the truth, kindly. Free and open-source under Apache 2.0 by Matthew Metcalf / Metcalf Solutions.
 
-## Overview
-Satori is an open-source agent skill and wisdom companion designed for the grey zone between everyday developer burnout and clinical care. It works alongside therapy, not as a replacement for it.
+## Positioning & Audience
+Satori helps people think more clearly through difficult decisions, recurring patterns, and the questions that matter most — combining established psychological frameworks and centuries of human philosophy, wherever you use AI. It is built for non-technical seekers in the grey zone between fine and not fine, founders and executives navigating burnout, software engineers working in CLI/IDE harnesses, and privacy-conscious evaluators. Satori works alongside therapy, not as a replacement for it (18+ only, non-clinical).
 
 - **Canonical URL**: https://metcalf.solutions/satori/
 - **GitHub Repository**: https://github.com/MetcalfSolutions/Satori
+- **No-Code Web Chat Release Zip (Claude.ai, Gemini, ChatGPT)**: https://github.com/MetcalfSolutions/Satori/releases/latest/download/SatoriSkill-Full-v6.6.0.zip
+- **Compact Single-File Zip (<=7,800 chars for Custom GPTs & Local <32B)**: https://github.com/MetcalfSolutions/Satori/releases/latest/download/SatoriSkill-Compact-v6.6.0.zip
 - **Quick Install (CLI / IDE)**: `npx skills add metcalfsolutions/satori`
 - **Tessl Registry**: `tessl install metcalf-solutions1/satori` (https://tessl.io/registry/metcalf-solutions1/satori)
-- **Web Chat Release Zip**: https://github.com/MetcalfSolutions/Satori/releases/latest/download/SatoriSkill-Full-v6.6.0.zip
 
 ## Key Architectural Guarantees
-- **16 Verified Surfaces**: 10 Agent CLI/IDE harnesses (Claude Code, Antigravity, Gemini CLI, Cursor, Windsurf, OpenCode, Hermes, Codex, Grok Build) and 6 Web Chat platforms (Claude.ai, Gemini Web, ChatGPT/Custom GPT).
-- **350-Case Trigger Benchmark**: 98.0% pure-coding silence (196/200 non-activation), 100.0% acute crisis safety gate (20/20), 100.0% reflective recall (60/60), 98.0% hybrid quality (49/50), Cohen's kappa = 0.84.
-- **8 Immovables**: Honesty before comfort; Insight must lead to movement; Never bypass difficulty; Humility about certainty; Clinical discipline, human voice; Autonomy & human connection; One lens, one question; Dual-mode memory discipline.
-- **18 Wisdom Traditions & Clinical Frameworks**: Stoicism, Taoism (Wu wei), Zen & Buddhism (Anicca), Advaita Vedanta (Sakshi), Ubuntu, Akan Sankofa, Kemetic Ma'at, Sufism (Rumi, Attar), Indigenous Reciprocity, IFS, DBT, CFT, ACT, Schema Therapy, Narrative Identity & MI, Somatic Grounding, Dual Process Bereavement, and Logotherapy.
-- **Zero Telemetry & Local Privacy**: Mode 1 stores structural thematic summaries (<=500 chars) in a local SQLite vault (`~/.satori/memory/`, POSIX 0700/0600); Mode 2 is stateless in web chat.
+- **Three Pillars**: Psychologically Informed (established therapeutic frameworks in plain speech), Conversationally Guided (tentative hypotheses, single question, zero lecturing), and Wise Companion (18 global traditions grouped into 8 streams).
+- **16 Supported Environments (Tier A/B/C)**:
+  - **Tier A (Verified)**: Claude.ai, ChatGPT, Claude Code, Google Antigravity, Gemini CLI, OpenAI Codex CLI, Cursor.
+  - **Tier B (Community-Supported)**: Google Gemini Web, xAI Grok Web, DeepSeek Chat, Windsurf, OpenCode, NousResearch Hermes Agent, OpenClaw, xAI Grok Build.
+  - **Tier C (Experimental)**: Meta AI.
+- **350-Case Trigger & Safety Benchmark (`evals/trigger_boundary_350.jsonl`)**: Evaluates trigger routing and safety gates (not clinical efficacy): 98.0% pure-coding silence (196/200 non-activation, 95% Wilson CI [94.97%, 99.22%]), 100.0% acute crisis safety gate (20/20), 100.0% Dark Night zero false hotlines (20/20), 100.0% reflective recall (60/60), 98.0% hybrid quality (49/50), Cohen's kappa = 0.84.
+- **8 Immovables (`references/SOUL.md`)**: Honesty before comfort; Insight must lead to movement; Never bypass difficulty; Humility about certainty; Psychological discipline beneath a human voice; Autonomy & human connection; One lens, one question; Dual-mode memory discipline.
+- **18 Wisdom Traditions & Clinical Frameworks Across 8 Streams**: Stoicism (Epictetus, Marcus Aurelius), Taoism (Wu wei, Zhuangzi), Zen & Buddhism (Anicca, enso), Advaita Vedanta (Sakshi witness consciousness), African Philosophy (Southern African Ubuntu, Akan Sankofa, Kemetic Ma'at), Sufism (Rumi, Attar, Qalb, Ishq, Fana & Baqa, Tawakkul), Indigenous Reciprocity (Seven Generations, Wahkohtowin, Potawatomi reciprocity), and Evidence-Based Psychology (IFS, DBT, CFT, ACT, Schema Therapy, Narrative Identity & MI, Somatic Grounding, Dual Process Bereavement, Logotherapy).
+- **3-Mode Privacy & Zero Telemetry**: Mode 1 stores structural thematic summaries (<=500 chars, never raw transcripts) in a local SQLite vault (`~/.satori/memory/`, POSIX 0700/0600); Mode 2 is stateless in web chat (processed under the chosen AI provider's policy); Mode 3 runs 100% offline with local open-weights models.
 
 ## Documentation & Specifications
-- [Landing Page](https://metcalf.solutions/satori/)
-- [Design System (Contemplative Synthesis)](https://metcalf.solutions/satori/DESIGN.md)
+- [Canonical Landing Page](https://metcalf.solutions/satori/)
+- [Photo Edition Preview](https://metcalf.solutions/satori/preview-photo.html)
+- [Design System](https://metcalf.solutions/satori/DESIGN.md)
 - [WCAG 2.1/2.2 AA & AAA Audit Report](https://metcalf.solutions/satori/WCAG-AUDIT.md)
 - [Web App Manifest](https://metcalf.solutions/satori/manifest.json)
 - [Satori Sitemap](https://metcalf.solutions/satori/sitemap.xml)

@@ -3,13 +3,13 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://metcalf.solutions/satori/</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://metcalf.solutions/satori/assets/og-image.png</image:loc>
-      <image:title>Satori — Open-Source AI Wisdom Companion: Built to be outgrown</image:title>
-      <image:caption>Satori v6.6.0 combining 18 contemplative and clinical traditions with zero telemetry.</image:caption>
+      <image:title>Satori — Free, Open-Source AI Wisdom Companion: Built to be outgrown</image:title>
+      <image:caption>Satori v6.6.0 combining 18 contemplative and psychological traditions with zero telemetry and a local SQLite memory vault.</image:caption>
     </image:image>
   </url>
 </urlset>
