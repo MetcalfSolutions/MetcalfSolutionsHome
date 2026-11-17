@@ -11,3 +11,6 @@
 - [Satori Sitemap](https://metcalf.solutions/satori/sitemap.xml)
 - [Satori LLMs Guide](https://metcalf.solutions/satori/llms.txt)
 - [Robots Policy](https://metcalf.solutions/robots.txt)
+
+## AI Content Signals
+- `Content-Signal: ai-train=yes, search=yes, ai-input=yes` (fully permissive for AI training, search indexing, and AI input/RAG across `metcalf.solutions` and `metcalf.solutions/satori/`).

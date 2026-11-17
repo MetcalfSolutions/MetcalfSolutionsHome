@@ -30,3 +30,7 @@ Satori helps people think more clearly through difficult decisions, recurring pa
 - [WCAG 2.1/2.2 AA & AAA Audit Report](https://metcalf.solutions/satori/WCAG-AUDIT.md)
 - [Web App Manifest](https://metcalf.solutions/satori/manifest.json)
 - [Satori Sitemap](https://metcalf.solutions/satori/sitemap.xml)
+- [Robots Policy](https://metcalf.solutions/robots.txt)
+
+## AI Content Signals
+- `Content-Signal: ai-train=yes, search=yes, ai-input=yes` (fully permissive for AI training, search indexing, and AI input/RAG).
