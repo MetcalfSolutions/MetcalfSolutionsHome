@@ -1,0 +1,94 @@
+{
+ "note": "Credits for the photographs in this folder: photos.mjs credits prints the footer block for the ones the pages use.",
+ "photos": [
+  {
+   "file": "photo-c877.webp",
+   "files": [
+    "photo-c877-500.webp",
+    "photo-c877-960.webp",
+    "photo-c877.webp"
+   ],
+   "id": "c877",
+   "alt": "Close-up of soft-focus stacked books showing page edges and covers with no readable spines",
+   "by": "Nenad Stojkovic",
+   "licence": "CC BY 2.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by/2.0/",
+   "page": "https://commons.wikimedia.org/wiki/File:Close-up_of_stacked_books._(51539890528).jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-d183.webp",
+   "files": [
+    "photo-d183-500.webp",
+    "photo-d183-960.webp",
+    "photo-d183.webp"
+   ],
+   "id": "d183",
+   "alt": "Open blank notebook with a ribbon marker and a pencil lying across the pages on a dark wooden table",
+   "by": "Jan Kahánek",
+   "licence": "CC0",
+   "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "page": "https://commons.wikimedia.org/wiki/File:Tabel_day_1_(Unsplash).jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-c823.webp",
+   "files": [
+    "photo-c823-500.webp",
+    "photo-c823-960.webp",
+    "photo-c823.webp"
+   ],
+   "id": "c823",
+   "alt": "Overlapping sheets of pale grey-green card scattered at angles, seen from above, with soft shadows along their edges",
+   "by": "Brandi Redd",
+   "licence": "CC0",
+   "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "page": "https://commons.wikimedia.org/wiki/File:Scattered_white_paper_(Unsplash).jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-f96229581.webp",
+   "files": [
+    "photo-f96229581-500.webp",
+    "photo-f96229581-960.webp",
+    "photo-f96229581.webp"
+   ],
+   "id": "f96229581",
+   "alt": "Misty Forest Schnebelhorn",
+   "by": "Jason Conzett",
+   "licence": "CC BY-SA 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Misty_Forest_Schnebelhorn.jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-f176043098.webp",
+   "files": [
+    "photo-f176043098-500.webp",
+    "photo-f176043098-960.webp",
+    "photo-f176043098.webp"
+   ],
+   "id": "f176043098",
+   "alt": "Framed Composition Abstract Architectural Study at MAAT Lisbon (54706407779)",
+   "by": "Dale Cruse - 10M views from San Francisco, CA, USA",
+   "licence": "CC BY 4.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Framed_Composition_Abstract_Architectural_Study_at_MAAT_Lisbon_(54706407779).jpg",
+   "source": "Wikimedia Commons"
+  },
+  {
+   "file": "photo-f18670617-960.webp",
+   "files": [
+    "photo-f18670617-500.webp",
+    "photo-f18670617-960.webp"
+   ],
+   "id": "f18670617",
+   "alt": "Duke Forest misty morning h",
+   "by": "Dcrjsr",
+   "licence": "CC BY 3.0",
+   "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Duke_Forest_misty_morning_h.jpg",
+   "source": "Wikimedia Commons"
+  }
+ ]
+}

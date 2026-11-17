@@ -5,7 +5,7 @@
 ## Primary Pages & Properties
 - [Metcalf.Solutions Hub](https://metcalf.solutions/): Directory linking to Matthew Metcalf, Jamie Metcalf, and Satori.
 - [Matthew Metcalf Portfolio](https://matthew.metcalf.solutions/): Digital strategy, campaign architecture, Cloudflare/managed hosting, and AI workflow automation.
-- [Jamie Metcalf Portfolio](https://jamie.metcalf.solutions/): Portfolio site for Jamie Metcalf.
+- [Jamie Metcalf Portfolio](https://jamie.metcalf.solutions/): Author portfolio for Jamie Metcalf, featuring her debut novel *Hedged* (urban fantasy mystery fiction; full site in progress).
 - [Satori — Free, Open-Source AI Wisdom Companion](https://metcalf.solutions/satori/): Flagship open-source AI wisdom companion (v6.6.0, Apache 2.0) helping people think more clearly through difficult decisions, recurring patterns, and quiet burnout — combining 18 contemplative and psychological traditions across Claude.ai, ChatGPT, Gemini, and 10 CLI/IDE coding harnesses with a 100% local SQLite memory vault (`~/.satori/memory/`).
 
 ## Machine-Readable Discovery
