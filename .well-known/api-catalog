@@ -1,0 +1,34 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://metcalf.solutions/",
+      "service-doc": [
+        {
+          "href": "https://metcalf.solutions/llms.txt",
+          "type": "text/plain"
+        }
+      ],
+      "describedby": [
+        {
+          "href": "https://metcalf.solutions/sitemap.xml",
+          "type": "application/xml"
+        }
+      ]
+    },
+    {
+      "anchor": "https://metcalf.solutions/satori/",
+      "service-doc": [
+        {
+          "href": "https://metcalf.solutions/satori/llms.txt",
+          "type": "text/plain"
+        }
+      ],
+      "describedby": [
+        {
+          "href": "https://metcalf.solutions/satori/sitemap.xml",
+          "type": "application/xml"
+        }
+      ]
+    }
+  ]
+}

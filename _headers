@@ -1,0 +1,14 @@
+/
+  Link: </.well-known/api-catalog>; rel="api-catalog", </llms.txt>; rel="describedby", </sitemap.xml>; rel="service-doc"
+
+/index.html
+  Link: </.well-known/api-catalog>; rel="api-catalog", </llms.txt>; rel="describedby", </sitemap.xml>; rel="service-doc"
+
+/satori/
+  Link: </.well-known/api-catalog>; rel="api-catalog", </satori/llms.txt>; rel="describedby", </satori/sitemap.xml>; rel="service-doc"
+
+/satori/index.html
+  Link: </.well-known/api-catalog>; rel="api-catalog", </satori/llms.txt>; rel="describedby", </satori/sitemap.xml>; rel="service-doc"
+
+/.well-known/api-catalog
+  Content-Type: application/linkset+json
